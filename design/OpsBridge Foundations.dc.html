@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-4b89cee6-cb9a-4401-bf8d-62d51fbeaab0/styles.css">
+<script src="_ds/organic-4b89cee6-cb9a-4401-bf8d-62d51fbeaab0/_ds_bundle.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --ob-bg:#f3eee6; --ob-surface:#fdfaf5; --ob-well:#eae3d8; --ob-line:#ded5c6; --ob-line-2:#c7bcaa;
+  --ob-text:#241f19; --ob-text-2:#6b6153; --ob-text-3:#948a7c;
+  --ob-accent:#c67139; --ob-accent-hi:#a95a28; --ob-accent-tint:#f8e7d8;
+  --ob-crit:#b23a2e; --ob-crit-tint:#f8e0dc; --ob-crit-ink:#8a2a20;
+  --ob-risk:#9c6c0b; --ob-risk-tint:#f8ecce; --ob-risk-ink:#7a5407;
+  --ob-ok:#4f7a3c;  --ob-ok-tint:#e6eed8;  --ob-ok-ink:#3c5e2d;
+  --ob-info:#2f6390; --ob-info-tint:#dfe9f2; --ob-info-ink:#254e73;
+  --ob-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --ob-r-sm:8px; --ob-r:12px; --ob-r-lg:18px;
+  --ob-row:11px; --ob-shadow:0 1px 2px rgba(46,43,37,.10),0 8px 24px rgba(46,43,37,.06);
+  --ob-shadow-lg:0 18px 48px rgba(30,26,20,.22);
+}
+:root[data-ob-theme="dark"]{
+  --ob-bg:#17150f; --ob-surface:#201d16; --ob-well:#2a261e; --ob-line:#38332a; --ob-line-2:#4e473c;
+  --ob-text:#f3ece0; --ob-text-2:#a89d8b; --ob-text-3:#7c7263;
+  --ob-accent:#dd8b4f; --ob-accent-hi:#efa870; --ob-accent-tint:#37281c;
+  --ob-crit:#ec8377; --ob-crit-tint:#3a201c; --ob-crit-ink:#f6b8af;
+  --ob-risk:#dfad48; --ob-risk-tint:#352a15; --ob-risk-ink:#f0cf8b;
+  --ob-ok:#93bd72;  --ob-ok-tint:#25301b;  --ob-ok-ink:#c0d9a8;
+  --ob-info:#7cafd8; --ob-info-tint:#1b2833; --ob-info-ink:#b3d1e8;
+  --ob-shadow:0 1px 0 rgba(255,255,255,.04),0 10px 28px rgba(0,0,0,.45);
+  --ob-shadow-lg:0 24px 60px rgba(0,0,0,.6);
+}
+:root[data-ob-density="compact"]{ --ob-row:6px; }
+html,body{margin:0;background:var(--ob-bg);color:var(--ob-text);font-family:var(--font-body);-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:var(--ob-accent-hi);text-decoration:none}
+a:hover{color:var(--ob-accent);text-decoration:underline}
+::selection{background:var(--ob-accent-tint)}
+:focus-visible{outline:2px solid var(--ob-accent);outline-offset:2px}
+@keyframes ob-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:var(--ob-bg);color:var(--ob-text);font-size:14px;line-height:1.55;padding-bottom:120px">
+
+  <div style="display:flex;align-items:center;gap:16px;padding:16px 40px;border-bottom:1px solid var(--ob-line);background:var(--ob-surface);position:sticky;top:0;z-index:20">
+    <div style="display:flex;align-items:center;gap:10px;margin-right:auto">
+      <div style="width:26px;height:26px;border-radius:9px;background:var(--ob-accent);display:grid;place-items:center;color:#fff;font-family:var(--font-body);font-weight:600;font-size:14px;line-height:1">O</div>
+      <span style="font-family:var(--font-body);font-weight:600;font-size:18px;letter-spacing:-.01em">OpsBridge</span>
+      <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);padding-left:10px;border-left:1px solid var(--ob-line);margin-left:4px">Design foundations</span>
+    </div>
+    <div style="display:flex;border:1px solid var(--ob-line);border-radius:999px;overflow:hidden">
+      <button onClick="{{ setLight }}" style="{{ lightBtn }}">Light</button>
+      <button onClick="{{ setDark }}" style="{{ darkBtn }}">Dark</button>
+    </div>
+    <div style="display:flex;border:1px solid var(--ob-line);border-radius:999px;overflow:hidden">
+      <button onClick="{{ setComfortable }}" style="{{ comfyBtn }}">Comfortable</button>
+      <button onClick="{{ setCompact }}" style="{{ compactBtn }}">Compact</button>
+    </div>
+  </div>
+
+  <div style="max-width:1180px;padding:56px 40px 0">
+    <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ob-accent);margin-bottom:14px">Foundations v1</div>
+    <h1 style="font-family:var(--font-body);font-weight:600;font-size:38px;line-height:1.1;letter-spacing:-.025em;margin:0 0 16px;max-width:20ch">The control room kit</h1>
+    <p style="margin:0;max-width:58ch;color:var(--ob-text-2);font-size:15px;text-wrap:pretty">A quiet, warm-neutral ground so that colour only ever means status. Four status hues, one accent, a type scale built for tables at 13px, and a component set sized for on-call work at 3am.</p>
+  </div>
+
+  <div style="max-width:1180px;padding:64px 40px 0">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:6px">
+      <h2 style="font-family:var(--font-body);font-weight:600;font-size:24px;margin:0;letter-spacing:-.01em">01 · Palette</h2>
+      <span style="color:var(--ob-text-3);font-size:13px">Neutral ground, single accent, four status roles</span>
+    </div>
+    <div style="height:1px;background:var(--ob-line);margin:18px 0 28px"></div>
+
+    <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:14px">Ground &amp; ink</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:14px;margin-bottom:36px">
+      <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r);overflow:hidden;background:var(--ob-surface)">
+        <div style="height:64px;background:var(--ob-bg)"></div>
+        <div style="padding:10px 12px"><div style="font-weight:600;font-size:13px">Canvas</div><div style="font-family:var(--ob-mono);font-size:11px;color:var(--ob-text-3)">--ob-bg</div></div>
+      </div>
+      <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r);overflow:hidden;background:var(--ob-surface)">
+        <div style="height:64px;background:var(--ob-surface);border-bottom:1px solid var(--ob-line)"></div>
+        <div style="padding:10px 12px"><div style="font-weight:600;font-size:13px">Surface</div><div style="font-family:var(--ob-mono);font-size:11px;color:var(--ob-text-3)">--ob-surface</div></div>
+      </div>
+      <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r);overflow:hidden;background:var(--ob-surface)">
+        <div style="height:64px;background:var(--ob-well)"></div>
+        <div style="padding:10px 12px"><div style="font-weight:600;font-size:13px">Well</div><div style="font-family:var(--ob-mono);font-size:11px;color:var(--ob-text-3)">--ob-well</div></div>
+      </div>
+      <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r);overflow:hidden;background:var(--ob-surface)">
+        <div style="height:64px;background:var(--ob-line-2)"></div>
+        <div style="padding:10px 12px"><div style="font-weight:600;font-size:13px">Rule</div><div style="font-family:var(--ob-mono);font-size:11px;color:var(--ob-text-3)">--ob-line-2</div></div>
+      </div>
+      <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r);overflow:hidden;background:var(--ob-surface)">
+        <div style="height:64px;background:var(--ob-text-2)"></div>
+        <div style="padding:10px 12px"><div style="font-weight:600;font-size:13px">Ink muted</div><div style="font-family:var(--ob-mono);font-size:11px;color:var(--ob-text-3)">--ob-text-2</div></div>
+      </div>
+      <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r);overflow:hidden;background:var(--ob-surface)">
+        <div style="height:64px;background:var(--ob-text)"></div>
+        <div style="padding:10px 12px"><div style="font-weight:600;font-size:13px">Ink</div><div style="font-family:var(--ob-mono);font-size:11px;color:var(--ob-text-3)">--ob-text</div></div>
+      </div>
+      <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r);overflow:hidden;background:var(--ob-surface)">
+        <div style="height:64px;background:var(--ob-accent)"></div>
+        <div style="padding:10px 12px"><div style="font-weight:600;font-size:13px">Accent</div><div style="font-family:var(--ob-mono);font-size:11px;color:var(--ob-text-3)">--ob-accent</div></div>
+      </div>
+    </div>
+
+    <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:14px">Status language</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+      <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r-lg);background:var(--ob-surface);padding:18px;box-shadow:var(--ob-shadow)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <span style="width:12px;height:12px;border-radius:999px;background:var(--ob-crit);box-shadow:0 0 0 4px var(--ob-crit-tint)"></span>
+          <span style="font-weight:600">Critical</span>
+        </div>
+        <div style="display:flex;gap:6px;margin-bottom:14px">
+          <div style="flex:1;height:34px;border-radius:var(--ob-r-sm);background:var(--ob-crit-tint)"></div>
+          <div style="flex:1;height:34px;border-radius:var(--ob-r-sm);background:var(--ob-crit)"></div>
+          <div style="flex:1;height:34px;border-radius:var(--ob-r-sm);background:var(--ob-crit-ink)"></div>
+        </div>
+        <div style="font-size:13px;color:var(--ob-text-2);text-wrap:pretty">SLA breached, P1 open, paging failed. Never used for emphasis — only for a real breach.</div>
+      </div>
+      <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r-lg);background:var(--ob-surface);padding:18px;box-shadow:var(--ob-shadow)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <span style="width:12px;height:12px;border-radius:999px;background:var(--ob-risk);box-shadow:0 0 0 4px var(--ob-risk-tint)"></span>
+          <span style="font-weight:600">At risk</span>
+        </div>
+        <div style="display:flex;gap:6px;margin-bottom:14px">
+          <div style="flex:1;height:34px;border-radius:var(--ob-r-sm);background:var(--ob-risk-tint)"></div>
+          <div style="flex:1;height:34px;border-radius:var(--ob-r-sm);background:var(--ob-risk)"></div>
+          <div style="flex:1;height:34px;border-radius:var(--ob-r-sm);background:var(--ob-risk-ink)"></div>
+        </div>
+        <div style="font-size:13px;color:var(--ob-text-2);text-wrap:pretty">Mitigated but unresolved, SLA inside 25%, degraded dependency.</div>
+      </div>
+      <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r-lg);background:var(--ob-surface);padding:18px;box-shadow:var(--ob-shadow)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <span style="width:12px;height:12px;border-radius:999px;background:var(--ob-ok);box-shadow:0 0 0 4px var(--ob-ok-tint)"></span>
+          <span style="font-weight:600">Healthy</span>
+        </div>
+        <div style="display:flex;gap:6px;margin-bottom:14px">
+          <div style="flex:1;height:34px;border-radius:var(--ob-r-sm);background:var(--ob-ok-tint)"></div>
+          <div style="flex:1;height:34px;border-radius:var(--ob-r-sm);background:var(--ob-ok)"></div>
+          <div style="flex:1;height:34px;border-radius:var(--ob-r-sm);background:var(--ob-ok-ink)"></div>
+        </div>
+        <div style="font-size:13px;color:var(--ob-text-2);text-wrap:pretty">Resolved, service nominal, checks passing. The default quiet state.</div>
+      </div>
+      <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r-lg);background:var(--ob-surface);padding:18px;box-shadow:var(--ob-shadow)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <span style="width:12px;height:12px;border-radius:999px;background:var(--ob-info);box-shadow:0 0 0 4px var(--ob-info-tint)"></span>
+          <span style="font-weight:600">In progress</span>
+        </div>
+        <div style="display:flex;gap:6px;margin-bottom:14px">
+          <div style="flex:1;height:34px;border-radius:var(--ob-r-sm);background:var(--ob-info-tint)"></div>
+          <div style="flex:1;height:34px;border-radius:var(--ob-r-sm);background:var(--ob-info)"></div>
+          <div style="flex:1;height:34px;border-radius:var(--ob-r-sm);background:var(--ob-info-ink)"></div>
+        </div>
+        <div style="font-size:13px;color:var(--ob-text-2);text-wrap:pretty">Investigating, acknowledged, informational notes and timeline entries.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1180px;padding:64px 40px 0">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:6px">
+      <h2 style="font-family:var(--font-body);font-weight:600;font-size:24px;margin:0;letter-spacing:-.01em">02 · Type</h2>
+      <span style="color:var(--ob-text-3);font-size:13px">One family — Figtree — across display, data and labels</span>
+    </div>
+    <div style="height:1px;background:var(--ob-line);margin:18px 0 28px"></div>
+
+    <div style="display:grid;gap:0;border:1px solid var(--ob-line);border-radius:var(--ob-r-lg);overflow:hidden;background:var(--ob-surface)">
+      <div style="display:grid;grid-template-columns:1fr 240px;gap:20px;align-items:center;padding:18px 22px;border-bottom:1px solid var(--ob-line)">
+        <div style="font-family:var(--font-body);font-weight:600;font-size:40px;line-height:1.05;letter-spacing:-.02em">Incident 2041</div>
+        <div style="font-family:var(--ob-mono);font-size:11px;color:var(--ob-text-3);line-height:1.7">Display / 40 / 1.05 / 600<br>page titles only</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 240px;gap:20px;align-items:center;padding:18px 22px;border-bottom:1px solid var(--ob-line)">
+        <div style="font-family:var(--font-body);font-weight:600;font-size:24px;line-height:1.15;letter-spacing:-.01em">Section heading</div>
+        <div style="font-family:var(--ob-mono);font-size:11px;color:var(--ob-text-3);line-height:1.7">H2 / 24 / 1.15</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 240px;gap:20px;align-items:center;padding:18px 22px;border-bottom:1px solid var(--ob-line)">
+        <div style="font-size:17px;font-weight:600;line-height:1.3">Card &amp; drawer title</div>
+        <div style="font-family:var(--ob-mono);font-size:11px;color:var(--ob-text-3);line-height:1.7">H3 / 17 / 600</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 240px;gap:20px;align-items:center;padding:18px 22px;border-bottom:1px solid var(--ob-line)">
+        <div style="font-size:14px;line-height:1.55;max-width:52ch">Body — postmortem prose, drawer notes, descriptions. Reads comfortably at paragraph length without pushing rows apart.</div>
+        <div style="font-family:var(--ob-mono);font-size:11px;color:var(--ob-text-3);line-height:1.7">Body / 14 / 1.55</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 240px;gap:20px;align-items:center;padding:18px 22px;border-bottom:1px solid var(--ob-line)">
+        <div style="font-size:13px;line-height:1.45;font-variant-numeric:tabular-nums">Table cell — payments-api · 14:32:07 · 4 services · 98.412%</div>
+        <div style="font-family:var(--ob-mono);font-size:11px;color:var(--ob-text-3);line-height:1.7">Data / 13 / tabular-nums</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 240px;gap:20px;align-items:center;padding:18px 22px;border-bottom:1px solid var(--ob-line)">
+        <div style="font-family:var(--ob-mono);font-size:13px;letter-spacing:-.01em">INC-2041 · a4f9c2e · 00:12:44</div>
+        <div style="font-family:var(--ob-mono);font-size:11px;color:var(--ob-text-3);line-height:1.7">Mono / 13 · ids, hashes, clocks</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 240px;gap:20px;align-items:center;padding:18px 22px">
+        <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3)">Label · column header · kicker</div>
+        <div style="font-family:var(--ob-mono);font-size:11px;color:var(--ob-text-3);line-height:1.7">Micro / 11 / .12em caps</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1180px;padding:64px 40px 0">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:6px">
+      <h2 style="font-family:var(--font-body);font-weight:600;font-size:24px;margin:0;letter-spacing:-.01em">03 · Components</h2>
+      <span style="color:var(--ob-text-3);font-size:13px">Everything is interactive — click through it</span>
+    </div>
+    <div style="height:1px;background:var(--ob-line);margin:18px 0 28px"></div>
+
+    <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:14px">Buttons</div>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px">
+      <button style="display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 16px;border:1px solid var(--ob-accent);border-radius:var(--ob-r-sm);background:var(--ob-accent);color:#fff;font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer" style-hover="background:var(--ob-accent-hi);border-color:var(--ob-accent-hi)">Declare incident</button>
+      <button style="display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 16px;border:1px solid var(--ob-line-2);border-radius:var(--ob-r-sm);background:var(--ob-surface);color:var(--ob-text);font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer" style-hover="background:var(--ob-well)">Assign</button>
+      <button style="display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 12px;border:1px solid transparent;border-radius:var(--ob-r-sm);background:transparent;color:var(--ob-text-2);font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer" style-hover="background:var(--ob-well);color:var(--ob-text)">Snooze</button>
+      <button style="display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 16px;border:1px solid var(--ob-crit);border-radius:var(--ob-r-sm);background:var(--ob-crit-tint);color:var(--ob-crit-ink);font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer" style-hover="background:var(--ob-crit);color:#fff">Page on-call</button>
+      <button aria-label="More" style="display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--ob-line-2);border-radius:var(--ob-r-sm);background:var(--ob-surface);color:var(--ob-text-2);cursor:pointer;font-size:15px" style-hover="background:var(--ob-well);color:var(--ob-text)">···</button>
+      <button disabled="true" style="height:34px;padding:0 16px;border:1px solid var(--ob-line-2);border-radius:var(--ob-r-sm);background:var(--ob-surface);color:var(--ob-text);font-family:var(--font-body);font-size:13px;font-weight:600;opacity:.45">Resolve</button>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:36px">
+      <button style="height:26px;padding:0 11px;border:1px solid var(--ob-line-2);border-radius:6px;background:var(--ob-surface);color:var(--ob-text);font-family:var(--font-body);font-size:12px;font-weight:600;cursor:pointer" style-hover="background:var(--ob-well)">Small · 26px</button>
+      <button style="height:40px;padding:0 20px;border:1px solid var(--ob-accent);border-radius:var(--ob-r);background:var(--ob-accent);color:#fff;font-family:var(--font-body);font-size:14px;font-weight:600;cursor:pointer" style-hover="background:var(--ob-accent-hi)">Large · 40px</button>
+      <span style="font-size:13px;color:var(--ob-text-3)">Three sizes; 34px is the default row-safe height.</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px;margin-bottom:36px">
+      <div>
+        <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:14px">Status badges</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 11px 4px 9px;border-radius:999px;background:var(--ob-crit-tint);color:var(--ob-crit-ink);font-size:12px;font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--ob-crit)"></span>SLA breached</span>
+          <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 11px 4px 9px;border-radius:999px;background:var(--ob-risk-tint);color:var(--ob-risk-ink);font-size:12px;font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--ob-risk)"></span>Mitigated</span>
+          <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 11px 4px 9px;border-radius:999px;background:var(--ob-ok-tint);color:var(--ob-ok-ink);font-size:12px;font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--ob-ok)"></span>Resolved</span>
+          <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 11px 4px 9px;border-radius:999px;background:var(--ob-info-tint);color:var(--ob-info-ink);font-size:12px;font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--ob-info)"></span>Investigating</span>
+          <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 11px 4px 9px;border-radius:999px;background:var(--ob-well);color:var(--ob-text-2);font-size:12px;font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--ob-text-3)"></span>Monitoring</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:14px">Priority chips</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span style="display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:6px;background:var(--ob-crit);color:#fff;font-family:var(--ob-mono);font-size:12px;font-weight:600">P1</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:6px;background:var(--ob-crit-tint);color:var(--ob-crit-ink);border:1px solid var(--ob-crit);font-family:var(--ob-mono);font-size:12px;font-weight:600">P2</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:6px;background:var(--ob-risk-tint);color:var(--ob-risk-ink);border:1px solid var(--ob-risk);font-family:var(--ob-mono);font-size:12px;font-weight:600">P3</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:6px;background:var(--ob-well);color:var(--ob-text-2);border:1px solid var(--ob-line-2);font-family:var(--ob-mono);font-size:12px;font-weight:600">P4</span>
+        </div>
+        <div style="font-size:13px;color:var(--ob-text-2);margin-top:12px;max-width:44ch;text-wrap:pretty">Square-ish and monospaced so priority never reads as a status. Only P1 gets a solid fill.</div>
+      </div>
+    </div>
+
+    <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:14px">Data table</div>
+    <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r-lg);overflow:hidden;background:var(--ob-surface);box-shadow:var(--ob-shadow);margin-bottom:36px">
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--ob-line)">
+        <span style="font-size:17px;font-weight:600">Open incidents</span>
+        <span style="font-family:var(--ob-mono);font-size:12px;color:var(--ob-text-3)">6 of 41</span>
+        <span style="margin-left:auto;font-size:13px;color:var(--ob-text-3)">Sorted by SLA remaining</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums">
+        <thead>
+          <tr style="background:var(--ob-well)">
+            <th style="text-align:left;padding:9px 18px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600">ID</th>
+            <th style="text-align:left;padding:9px 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600">Incident</th>
+            <th style="text-align:left;padding:9px 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600">Pri</th>
+            <th style="text-align:left;padding:9px 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600">Status</th>
+            <th style="text-align:left;padding:9px 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600">Owner</th>
+            <th style="text-align:right;padding:9px 18px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600">SLA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <sc-for list="{{ rows }}" as="row" hint-placeholder-count="6">
+            <tr onClick="{{ openDrawer }}" style="border-top:1px solid var(--ob-line);cursor:pointer" style-hover="background:var(--ob-well)">
+              <td style="padding:var(--ob-row) 18px;font-family:var(--ob-mono);font-size:12px;color:var(--ob-text-2);white-space:nowrap">{{ row.id }}</td>
+              <td style="padding:var(--ob-row) 12px">
+                <div style="font-weight:600">{{ row.title }}</div>
+                <div style="color:var(--ob-text-3);font-size:12px">{{ row.service }}</div>
+              </td>
+              <td style="padding:var(--ob-row) 12px"><span style="{{ row.priStyle }}">{{ row.pri }}</span></td>
+              <td style="padding:var(--ob-row) 12px"><span style="{{ row.statusStyle }}"><span style="{{ row.dotStyle }}"></span>{{ row.status }}</span></td>
+              <td style="padding:var(--ob-row) 12px;color:var(--ob-text-2);white-space:nowrap">{{ row.owner }}</td>
+              <td style="padding:var(--ob-row) 18px;text-align:right;font-family:var(--ob-mono);font-size:12px;{{ row.slaColor }}">{{ row.sla }}</td>
+            </tr>
+          </sc-for>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:14px">Cards</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:36px">
+      <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r-lg);background:var(--ob-surface);padding:18px;box-shadow:var(--ob-shadow)">
+        <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:10px">Open · P1</div>
+        <div style="display:flex;align-items:flex-end;gap:8px"><span style="font-family:var(--font-body);font-weight:600;font-size:38px;line-height:1">3</span><span style="font-size:12px;color:var(--ob-crit);padding-bottom:6px;font-weight:600">+2 today</span></div>
+        <div style="height:4px;border-radius:999px;background:var(--ob-crit-tint);margin-top:14px;overflow:hidden"><div style="width:62%;height:100%;background:var(--ob-crit)"></div></div>
+      </div>
+      <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r-lg);background:var(--ob-surface);padding:18px;box-shadow:var(--ob-shadow)">
+        <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:10px">MTTR · 30d</div>
+        <div style="display:flex;align-items:flex-end;gap:8px"><span style="font-family:var(--font-body);font-weight:600;font-size:38px;line-height:1">41m</span><span style="font-size:12px;color:var(--ob-ok);padding-bottom:6px;font-weight:600">−12%</span></div>
+        <div style="height:4px;border-radius:999px;background:var(--ob-ok-tint);margin-top:14px;overflow:hidden"><div style="width:34%;height:100%;background:var(--ob-ok)"></div></div>
+      </div>
+      <div style="border:1px solid var(--ob-line);border-left:3px solid var(--ob-info);border-radius:var(--ob-r-lg);background:var(--ob-surface);padding:18px;box-shadow:var(--ob-shadow)">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+          <span style="font-family:var(--ob-mono);font-size:12px;color:var(--ob-text-3)">INC-2041</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;padding:2px 9px;border-radius:999px;background:var(--ob-info-tint);color:var(--ob-info-ink);font-size:11px;font-weight:600">Investigating</span>
+        </div>
+        <div style="font-size:15px;font-weight:600;margin-bottom:6px">Checkout latency above 2s</div>
+        <div style="font-size:13px;color:var(--ob-text-2);text-wrap:pretty">payments-api · 4 services affected · opened 14:32 by M. Okafor</div>
+        <div style="display:flex;gap:8px;margin-top:14px">
+          <button onClick="{{ openDrawer }}" style="height:30px;padding:0 13px;border:1px solid var(--ob-line-2);border-radius:var(--ob-r-sm);background:var(--ob-surface);color:var(--ob-text);font-family:var(--font-body);font-size:12px;font-weight:600;cursor:pointer" style-hover="background:var(--ob-well)">Open drawer</button>
+          <button onClick="{{ pushToast }}" style="height:30px;padding:0 13px;border:1px solid transparent;border-radius:var(--ob-r-sm);background:transparent;color:var(--ob-text-2);font-family:var(--font-body);font-size:12px;font-weight:600;cursor:pointer" style-hover="background:var(--ob-well);color:var(--ob-text)">Notify</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:36px">
+      <div>
+        <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:14px">Side drawer</div>
+        <div style="font-size:13px;color:var(--ob-text-2);max-width:46ch;margin-bottom:14px;text-wrap:pretty">460px, right-anchored, overlay dims the ground. Header pins the ID and status; actions pin to the footer. Rows in the table above open it too.</div>
+        <button onClick="{{ openDrawer }}" style="height:34px;padding:0 16px;border:1px solid var(--ob-accent);border-radius:var(--ob-r-sm);background:var(--ob-accent);color:#fff;font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer" style-hover="background:var(--ob-accent-hi)">Open incident drawer</button>
+      </div>
+      <div>
+        <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:14px">Toasts</div>
+        <div style="font-size:13px;color:var(--ob-text-2);max-width:46ch;margin-bottom:14px;text-wrap:pretty">Bottom-right stack, status-tinted left edge, 6s auto-dismiss. Critical toasts stay until dismissed.</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <button onClick="{{ toastCrit }}" style="height:30px;padding:0 13px;border:1px solid var(--ob-crit);border-radius:var(--ob-r-sm);background:var(--ob-crit-tint);color:var(--ob-crit-ink);font-family:var(--font-body);font-size:12px;font-weight:600;cursor:pointer">Critical</button>
+          <button onClick="{{ toastRisk }}" style="height:30px;padding:0 13px;border:1px solid var(--ob-risk);border-radius:var(--ob-r-sm);background:var(--ob-risk-tint);color:var(--ob-risk-ink);font-family:var(--font-body);font-size:12px;font-weight:600;cursor:pointer">At risk</button>
+          <button onClick="{{ toastOk }}" style="height:30px;padding:0 13px;border:1px solid var(--ob-ok);border-radius:var(--ob-r-sm);background:var(--ob-ok-tint);color:var(--ob-ok-ink);font-family:var(--font-body);font-size:12px;font-weight:600;cursor:pointer">Resolved</button>
+          <button onClick="{{ pushToast }}" style="height:30px;padding:0 13px;border:1px solid var(--ob-info);border-radius:var(--ob-r-sm);background:var(--ob-info-tint);color:var(--ob-info-ink);font-family:var(--font-body);font-size:12px;font-weight:600;cursor:pointer">Info</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <sc-if value="{{ drawerOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:40">
+      <div onClick="{{ closeDrawer }}" style="position:absolute;inset:0;background:rgba(24,20,14,.44)"></div>
+      <div style="position:absolute;top:0;right:0;bottom:0;width:min(460px,100%);background:var(--ob-surface);border-left:1px solid var(--ob-line);box-shadow:var(--ob-shadow-lg);display:flex;flex-direction:column;animation:ob-in .18s ease-out">
+        <div style="padding:18px 22px;border-bottom:1px solid var(--ob-line)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <span style="font-family:var(--ob-mono);font-size:12px;color:var(--ob-text-3)">INC-2041</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;background:var(--ob-info-tint);color:var(--ob-info-ink);font-size:11px;font-weight:600"><span style="width:6px;height:6px;border-radius:999px;background:var(--ob-info)"></span>Investigating</span>
+            <span style="padding:2px 9px;border-radius:6px;background:var(--ob-crit);color:#fff;font-family:var(--ob-mono);font-size:11px;font-weight:600">P1</span>
+            <button onClick="{{ closeDrawer }}" aria-label="Close" style="margin-left:auto;display:grid;place-items:center;width:28px;height:28px;border:1px solid var(--ob-line);border-radius:var(--ob-r-sm);background:transparent;color:var(--ob-text-2);cursor:pointer;font-size:14px" style-hover="background:var(--ob-well);color:var(--ob-text)">✕</button>
+          </div>
+          <div style="font-size:19px;font-weight:600;line-height:1.25">Checkout latency above 2s</div>
+        </div>
+        <div style="padding:18px 22px;overflow:auto;display:flex;flex-direction:column;gap:20px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+            <div><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:4px">Owner</div><div style="font-size:13px">M. Okafor · Payments</div></div>
+            <div><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:4px">SLA remaining</div><div style="font-family:var(--ob-mono);font-size:13px;color:var(--ob-risk-ink)">00:24:11</div></div>
+            <div><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:4px">Opened</div><div style="font-family:var(--ob-mono);font-size:13px">14:32:07 UTC</div></div>
+            <div><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:4px">Affected</div><div style="font-size:13px">4 services</div></div>
+          </div>
+          <div style="height:1px;background:var(--ob-line)"></div>
+          <div>
+            <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:12px">Timeline</div>
+            <div style="display:flex;flex-direction:column;gap:14px">
+              <div style="display:grid;grid-template-columns:16px 1fr;gap:12px">
+                <span style="width:9px;height:9px;border-radius:999px;background:var(--ob-info);margin-top:5px"></span>
+                <div><div style="font-size:13px;font-weight:600">Rollback of build a4f9c2e started</div><div style="font-family:var(--ob-mono);font-size:12px;color:var(--ob-text-3)">14:51 · automation</div></div>
+              </div>
+              <div style="display:grid;grid-template-columns:16px 1fr;gap:12px">
+                <span style="width:9px;height:9px;border-radius:999px;background:var(--ob-risk);margin-top:5px"></span>
+                <div><div style="font-size:13px;font-weight:600">Cache hit rate degraded to 61%</div><div style="font-family:var(--ob-mono);font-size:12px;color:var(--ob-text-3)">14:44 · monitor</div></div>
+              </div>
+              <div style="display:grid;grid-template-columns:16px 1fr;gap:12px">
+                <span style="width:9px;height:9px;border-radius:999px;background:var(--ob-crit);margin-top:5px"></span>
+                <div><div style="font-size:13px;font-weight:600">p99 latency crossed 2000ms</div><div style="font-family:var(--ob-mono);font-size:12px;color:var(--ob-text-3)">14:32 · monitor</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="background:var(--ob-well);border-radius:var(--ob-r);padding:14px;font-size:13px;color:var(--ob-text-2);text-wrap:pretty">Wells hold quoted context — runbook snippets, on-call notes, the last postmortem action.</div>
+        </div>
+        <div style="margin-top:auto;display:flex;gap:8px;padding:14px 22px;border-top:1px solid var(--ob-line)">
+          <button onClick="{{ toastOk }}" style="height:34px;padding:0 16px;border:1px solid var(--ob-accent);border-radius:var(--ob-r-sm);background:var(--ob-accent);color:#fff;font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer" style-hover="background:var(--ob-accent-hi)">Mark resolved</button>
+          <button onClick="{{ toastRisk }}" style="height:34px;padding:0 16px;border:1px solid var(--ob-line-2);border-radius:var(--ob-r-sm);background:var(--ob-surface);color:var(--ob-text);font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer" style-hover="background:var(--ob-well)">Mitigate</button>
+          <button onClick="{{ closeDrawer }}" style="margin-left:auto;height:34px;padding:0 12px;border:1px solid transparent;border-radius:var(--ob-r-sm);background:transparent;color:var(--ob-text-2);font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer" style-hover="background:var(--ob-well);color:var(--ob-text)">Close</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="position:fixed;right:24px;bottom:24px;z-index:50;display:flex;flex-direction:column;gap:10px;width:340px">
+    <sc-for list="{{ toasts }}" as="t" hint-placeholder-count="0">
+      <div style="{{ t.style }}">
+        <div style="display:flex;gap:10px;align-items:flex-start">
+          <span style="{{ t.dot }}"></span>
+          <div style="flex:1">
+            <div style="font-size:13px;font-weight:600;margin-bottom:2px">{{ t.title }}</div>
+            <div style="font-size:12px;color:var(--ob-text-2)">{{ t.body }}</div>
+          </div>
+          <button onClick="{{ t.dismiss }}" aria-label="Dismiss" style="border:0;background:transparent;color:var(--ob-text-3);cursor:pointer;font-size:13px;padding:0 2px">✕</button>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light' | 'dark'&quot;,&quot;section&quot;:&quot;Appearance&quot;},&quot;density&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;comfortable&quot;,&quot;compact&quot;],&quot;default&quot;:&quot;comfortable&quot;,&quot;tsType&quot;:&quot;'comfortable' | 'compact'&quot;,&quot;section&quot;:&quot;Appearance&quot;}}">
+class Component extends DCLogic {
+  state = { drawer: false, toasts: [], seq: 0 };
+
+  componentDidMount() {
+    this.apply();
+  }
+  componentDidUpdate(prev) {
+    if (prev.theme !== this.props.theme || prev.density !== this.props.density) this.apply();
+  }
+  apply() {
+    const r = document.documentElement;
+    r.dataset.obTheme = this.state.theme || this.props.theme || 'light';
+    r.dataset.obDensity = this.state.density || this.props.density || 'comfortable';
+    this.forceUpdate();
+  }
+  setTheme(v) { this.state.theme = v; this.apply(); }
+  setDensity(v) { this.state.density = v; this.apply(); }
+
+  toast(kind, title, body) {
+    const id = ++this.state.seq;
+    const t = { id, kind, title, body };
+    this.setState(s => ({ toasts: [...s.toasts, t].slice(-4) }));
+    if (kind !== 'crit') setTimeout(() => this.dismiss(id), 6000);
+  }
+  dismiss(id) { this.setState(s => ({ toasts: s.toasts.filter(t => t.id !== id) })); }
+
+  segStyle(active) {
+    return 'height:30px;padding:0 14px;border:0;background:' + (active ? 'var(--ob-accent)' : 'transparent')
+      + ';color:' + (active ? '#fff' : 'var(--ob-text-2)')
+      + ';font-family:var(--font-body);font-size:12px;font-weight:600;cursor:pointer';
+  }
+
+  renderVals() {
+    const theme = this.state.theme || this.props.theme || 'light';
+    const density = this.state.density || this.props.density || 'comfortable';
+    const pri = p => {
+      const map = {
+        P1: 'background:var(--ob-crit);color:#fff;border:1px solid var(--ob-crit)',
+        P2: 'background:var(--ob-crit-tint);color:var(--ob-crit-ink);border:1px solid var(--ob-crit)',
+        P3: 'background:var(--ob-risk-tint);color:var(--ob-risk-ink);border:1px solid var(--ob-risk)',
+        P4: 'background:var(--ob-well);color:var(--ob-text-2);border:1px solid var(--ob-line-2)'
+      };
+      return 'display:inline-flex;padding:2px 9px;border-radius:6px;font-family:var(--ob-mono);font-size:12px;font-weight:600;' + map[p];
+    };
+    const status = k => 'display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600;background:var(--ob-' + k + '-tint);color:var(--ob-' + k + '-ink)';
+    const dot = k => 'width:6px;height:6px;border-radius:999px;background:var(--ob-' + k + ')';
+    const data = [
+      ['INC-2041', 'Checkout latency above 2s', 'payments-api', 'P1', 'crit', 'SLA breached', 'M. Okafor', '-00:04:12', 'crit'],
+      ['INC-2039', 'Auth token refresh failures', 'identity-svc', 'P1', 'risk', 'Mitigated', 'R. Villanueva', '00:24:11', 'risk'],
+      ['INC-2036', 'Search indexer backlog', 'search-core', 'P2', 'info', 'Investigating', 'D. Lindqvist', '01:12:40', 'text-2'],
+      ['INC-2031', 'Elevated 5xx on edge nodes', 'edge-gw', 'P2', 'info', 'Investigating', 'A. Bhatt', '02:48:05', 'text-2'],
+      ['INC-2028', 'Webhook delivery delays', 'events-bus', 'P3', 'risk', 'Mitigated', 'Unassigned', '06:03:22', 'text-2'],
+      ['INC-2019', 'Report export timeouts', 'analytics-api', 'P4', 'ok', 'Resolved', 'S. Aoki', '—', 'ok']
+    ];
+    return {
+      rows: data.map(d => ({
+        id: d[0], title: d[1], service: d[2], pri: d[3], priStyle: pri(d[3]),
+        status: d[5], statusStyle: status(d[4]), dotStyle: dot(d[4]), owner: d[6], sla: d[7],
+        slaColor: 'color:var(--ob-' + d[8] + (d[8] === 'text-2' ? '' : '-ink') + ')'
+      })),
+      drawerOpen: this.state.drawer,
+      openDrawer: () => this.setState({ drawer: true }),
+      closeDrawer: () => this.setState({ drawer: false }),
+      pushToast: () => this.toast('info', 'Status page updated', 'Subscribers notified · 12,410 recipients'),
+      toastCrit: () => this.toast('crit', 'SLA breached — INC-2041', 'Escalated to secondary on-call automatically'),
+      toastRisk: () => this.toast('risk', 'Mitigation applied', 'Traffic shifted to eu-west-2 · monitoring 15m'),
+      toastOk: () => this.toast('ok', 'INC-2041 resolved', 'Duration 1h 04m · postmortem due Friday'),
+      toasts: this.state.toasts.map(t => ({
+        title: t.title, body: t.body, dismiss: () => this.dismiss(t.id),
+        style: 'background:var(--ob-surface);border:1px solid var(--ob-line);border-left:3px solid var(--ob-' + t.kind + ');border-radius:var(--ob-r);box-shadow:var(--ob-shadow-lg);padding:13px 14px;animation:ob-in .18s ease-out',
+        dot: 'width:8px;height:8px;border-radius:999px;margin-top:5px;background:var(--ob-' + t.kind + ')'
+      })),
+      setLight: () => this.setTheme('light'),
+      setDark: () => this.setTheme('dark'),
+      setComfortable: () => this.setDensity('comfortable'),
+      setCompact: () => this.setDensity('compact'),
+      lightBtn: this.segStyle(theme === 'light'),
+      darkBtn: this.segStyle(theme === 'dark'),
+      comfyBtn: this.segStyle(density === 'comfortable'),
+      compactBtn: this.segStyle(density === 'compact')
+    };
+  }
+}
+</script>
+</body>
+</html>

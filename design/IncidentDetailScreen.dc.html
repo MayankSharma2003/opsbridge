@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-4b89cee6-cb9a-4401-bf8d-62d51fbeaab0/styles.css">
+<script src="_ds/organic-4b89cee6-cb9a-4401-bf8d-62d51fbeaab0/_ds_bundle.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+[data-ob-theme="light"]{
+  --ob-bg:#f3eee6; --ob-surface:#fdfaf5; --ob-well:#eae3d8; --ob-line:#ded5c6; --ob-line-2:#c7bcaa;
+  --ob-text:#241f19; --ob-text-2:#6b6153; --ob-text-3:#948a7c;
+  --ob-accent:#c67139; --ob-accent-hi:#a95a28; --ob-accent-tint:#f8e7d8;
+  --ob-crit:#b23a2e; --ob-crit-tint:#f8e0dc; --ob-crit-ink:#8a2a20;
+  --ob-risk:#9c6c0b; --ob-risk-tint:#f8ecce; --ob-risk-ink:#7a5407;
+  --ob-ok:#4f7a3c;  --ob-ok-tint:#e6eed8;  --ob-ok-ink:#3c5e2d;
+  --ob-info:#2f6390; --ob-info-tint:#dfe9f2; --ob-info-ink:#254e73;
+  --ob-shadow:0 1px 2px rgba(46,43,37,.10),0 8px 24px rgba(46,43,37,.06);
+  --ob-shadow-lg:0 18px 44px rgba(30,26,20,.18);
+}
+[data-ob-theme="dark"]{
+  --ob-bg:#17150f; --ob-surface:#201d16; --ob-well:#2a261e; --ob-line:#38332a; --ob-line-2:#4e473c;
+  --ob-text:#f3ece0; --ob-text-2:#a89d8b; --ob-text-3:#7c7263;
+  --ob-accent:#dd8b4f; --ob-accent-hi:#efa870; --ob-accent-tint:#37281c;
+  --ob-crit:#ec8377; --ob-crit-tint:#3a201c; --ob-crit-ink:#f6b8af;
+  --ob-risk:#dfad48; --ob-risk-tint:#352a15; --ob-risk-ink:#f0cf8b;
+  --ob-ok:#93bd72;  --ob-ok-tint:#25301b;  --ob-ok-ink:#c0d9a8;
+  --ob-info:#7cafd8; --ob-info-tint:#1b2833; --ob-info-ink:#b3d1e8;
+  --ob-shadow:0 1px 0 rgba(255,255,255,.04),0 10px 28px rgba(0,0,0,.45);
+  --ob-shadow-lg:0 24px 56px rgba(0,0,0,.6);
+}
+:root{ --ob-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace; --ob-r-sm:8px; --ob-r:12px; --ob-r-lg:18px; }
+html,body{margin:0;background:#f3eee6}
+*{box-sizing:border-box}
+@keyframes ob-pop{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+
+<div data-ob-theme="{{ theme }}" style="min-height:max(940px,100vh);background:var(--ob-bg);color:var(--ob-text);font-family:var(--font-body);font-size:14px;line-height:1.5">
+
+  <div style="display:flex;align-items:center;gap:12px;padding:11px 28px;border-bottom:1px solid var(--ob-line);background:var(--ob-surface)">
+    <div style="display:flex;align-items:center;gap:9px">
+      <div style="width:22px;height:22px;border-radius:8px;background:var(--ob-accent);display:grid;place-items:center;color:var(--ob-surface);font-size:12px;font-weight:600;line-height:1">O</div>
+      <span style="font-size:13px;color:var(--ob-text-3)">Incidents</span>
+      <span style="color:var(--ob-text-3)">/</span>
+      <span style="font-family:var(--ob-mono);font-size:13px;font-weight:600">INC-2039</span>
+    </div>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:10px">
+      <span style="{{ roleBadge }}">{{ roleLabel }}</span>
+      <div style="display:flex;align-items:center;gap:8px">
+        <div style="width:24px;height:24px;border-radius:999px;background:var(--ob-info-tint);color:var(--ob-info-ink);display:grid;place-items:center;font-size:10px;font-weight:600">{{ meInitials }}</div>
+        <span style="font-size:13px;color:var(--ob-text-2)">{{ meName }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:22px 28px 0;display:flex;align-items:flex-start;gap:24px;flex-wrap:wrap">
+    <div style="min-width:0;flex:1">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px">
+        <span style="{{ statusBadge }}"><span style="{{ statusDot }}"></span>{{ status }}</span>
+        <span style="display:inline-flex;padding:3px 10px;border-radius:6px;background:var(--ob-crit);color:var(--ob-surface);font-family:var(--ob-mono);font-size:12px;font-weight:600">P1</span>
+        <span style="font-family:var(--ob-mono);font-size:12px;color:var(--ob-text-3)">opened 14:18:22 UTC · 41m ago</span>
+      </div>
+      <h1 style="font-family:var(--font-body);font-size:27px;font-weight:600;letter-spacing:-.02em;line-height:1.2;margin:0 0 8px;max-width:34ch">Auth token refresh failures</h1>
+      <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ob-text-2);flex-wrap:wrap">
+        <span style="font-family:var(--ob-mono)">identity-svc</span>
+        <span style="color:var(--ob-text-3)">·</span><span>4 services affected</span>
+        <span style="color:var(--ob-text-3)">·</span><span>~12,400 users</span>
+        <span style="color:var(--ob-text-3)">·</span><span>Assigned to <strong style="color:var(--ob-text);font-weight:600">{{ assignee }}</strong></span>
+      </div>
+    </div>
+
+    <div style="{{ slaCardStyle }}">
+      <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:6px">SLA remaining</div>
+      <div style="{{ slaTimeStyle }}">{{ slaTime }}</div>
+      <div style="font-size:12px;color:var(--ob-text-2);margin-top:4px">{{ slaNote }}</div>
+      <div style="height:5px;border-radius:999px;background:var(--ob-well);margin-top:12px;overflow:hidden"><div style="{{ slaBarStyle }}"></div></div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:8px;padding-top:26px">
+      <div style="position:relative">
+        <button onClick="{{ toggleStatusMenu }}" style="{{ primaryBtn }}">Change status ▾</button>
+        <sc-if value="{{ statusMenuOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;top:42px;right:0;z-index:30;width:286px;padding:8px;border:1px solid var(--ob-line);border-radius:var(--ob-r);background:var(--ob-surface);box-shadow:var(--ob-shadow-lg);animation:ob-pop .14s ease-out">
+            <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);padding:6px 8px">Valid from {{ status }}</div>
+            <sc-for list="{{ transitions }}" as="t" hint-placeholder-count="4">
+              <button onClick="{{ t.pick }}" style="{{ t.style }}">
+                <span style="display:flex;align-items:center;gap:8px"><span style="{{ t.dot }}"></span><span style="font-weight:600;font-size:13px">{{ t.label }}</span></span>
+                <span style="font-size:12px;color:var(--ob-text-3);text-align:left">{{ t.note }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+      <div style="position:relative">
+        <button onClick="{{ toggleAssignMenu }}" style="{{ secondaryBtn }}">Assign ▾</button>
+        <sc-if value="{{ assignMenuOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;top:42px;right:0;z-index:30;width:252px;padding:8px;border:1px solid var(--ob-line);border-radius:var(--ob-r);background:var(--ob-surface);box-shadow:var(--ob-shadow-lg);animation:ob-pop .14s ease-out">
+            <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);padding:6px 8px">On-call &amp; owners</div>
+            <sc-for list="{{ people }}" as="p" hint-placeholder-count="4">
+              <button onClick="{{ p.pick }}" style="{{ p.style }}">
+                <span style="{{ p.avatar }}">{{ p.initials }}</span>
+                <span style="display:flex;flex-direction:column;text-align:left"><span style="font-weight:600;font-size:13px">{{ p.name }}</span><span style="font-size:11px;color:var(--ob-text-3)">{{ p.team }}</span></span>
+              </button>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+      <button style="{{ ghostBtn }}">···</button>
+    </div>
+  </div>
+
+  <sc-if value="{{ isViewer }}" hint-placeholder-val="{{ false }}">
+    <div style="margin:16px 28px 0;display:flex;align-items:center;gap:10px;padding:11px 16px;border:1px solid var(--ob-line);border-left:3px solid var(--ob-info);border-radius:var(--ob-r);background:var(--ob-info-tint);color:var(--ob-info-ink);font-size:13px">
+      <span style="width:7px;height:7px;border-radius:999px;background:var(--ob-info);flex:none"></span>
+      Viewer access — status changes and assignment are disabled. Ask an Operator in #ops-bridge to act on this incident.
+    </div>
+  </sc-if>
+
+  <div style="padding:22px 28px 32px;display:grid;grid-template-columns:1.5fr 1fr;gap:18px;align-items:start">
+
+    <div style="display:flex;flex-direction:column;gap:18px;min-width:0">
+      <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r-lg);background:var(--ob-surface);box-shadow:var(--ob-shadow);padding:20px">
+        <div style="font-size:15px;font-weight:600;margin-bottom:10px">Description</div>
+        <p style="margin:0 0 14px;font-size:14px;color:var(--ob-text-2);text-wrap:pretty">Refresh calls to <span style="font-family:var(--ob-mono);font-size:13px;color:var(--ob-text)">/oauth/token</span> began returning 401 for sessions older than 60 minutes after build <span style="font-family:var(--ob-mono);font-size:13px;color:var(--ob-text)">a4f9c2e</span> shipped a clock-skew tolerance change. Users are silently signed out mid-session; checkout traffic is the loudest surface.</p>
+        <p style="margin:0;font-size:14px;color:var(--ob-text-2);text-wrap:pretty">Mitigation in place: skew tolerance reverted to 90s at the edge and the affected pods restarted in eu-west-1. Monitoring for a clean hour before resolving.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:18px">
+          <div style="background:var(--ob-well);border-radius:var(--ob-r);padding:11px 13px"><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:3px">Detected by</div><div style="font-size:13px">Synthetic check</div></div>
+          <div style="background:var(--ob-well);border-radius:var(--ob-r);padding:11px 13px"><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:3px">Error rate</div><div style="font-family:var(--ob-mono);font-size:13px;color:var(--ob-risk-ink)">2.8% → 0.4%</div></div>
+          <div style="background:var(--ob-well);border-radius:var(--ob-r);padding:11px 13px"><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:3px">Suspect build</div><div style="font-family:var(--ob-mono);font-size:13px">a4f9c2e</div></div>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r-lg);background:var(--ob-surface);box-shadow:var(--ob-shadow);padding:20px">
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:14px">
+          <span style="font-size:15px;font-weight:600">Linked service</span>
+          <span style="margin-left:auto;font-size:12px;font-weight:600;color:var(--ob-accent-hi)">Open service page</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+          <div style="width:44px;height:44px;border-radius:14px;background:var(--ob-info-tint);color:var(--ob-info-ink);display:grid;place-items:center;font-family:var(--ob-mono);font-size:13px;font-weight:600">id</div>
+          <div style="min-width:160px">
+            <div style="font-family:var(--ob-mono);font-size:15px;font-weight:600">identity-svc</div>
+            <div style="font-size:13px;color:var(--ob-text-2)">Owned by <strong style="color:var(--ob-text);font-weight:600">Team Gatekeeper</strong> · tier 1</div>
+          </div>
+          <div style="margin-left:auto;display:flex;gap:20px">
+            <div><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3)">SLA target</div><div style="font-family:var(--ob-mono);font-size:13px">60m to mitigate</div></div>
+            <div><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3)">Escalation</div><div style="font-size:13px">Gatekeeper → Platform</div></div>
+            <div><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3)">Open incidents</div><div style="font-family:var(--ob-mono);font-size:13px">3</div></div>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;padding-top:16px;border-top:1px solid var(--ob-line)">
+          <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 11px;border-radius:999px;background:var(--ob-crit-tint);color:var(--ob-crit-ink);font-size:12px;font-weight:600"><span style="width:6px;height:6px;border-radius:999px;background:var(--ob-crit)"></span>payments-api</span>
+          <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 11px;border-radius:999px;background:var(--ob-risk-tint);color:var(--ob-risk-ink);font-size:12px;font-weight:600"><span style="width:6px;height:6px;border-radius:999px;background:var(--ob-risk)"></span>checkout-web</span>
+          <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 11px;border-radius:999px;background:var(--ob-risk-tint);color:var(--ob-risk-ink);font-size:12px;font-weight:600"><span style="width:6px;height:6px;border-radius:999px;background:var(--ob-risk)"></span>mobile-bff</span>
+          <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 11px;border-radius:999px;background:var(--ob-ok-tint);color:var(--ob-ok-ink);font-size:12px;font-weight:600"><span style="width:6px;height:6px;border-radius:999px;background:var(--ob-ok)"></span>admin-console</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r-lg);background:var(--ob-surface);box-shadow:var(--ob-shadow);display:flex;flex-direction:column;overflow:hidden">
+      <div style="display:flex;align-items:baseline;gap:10px;padding:16px 18px;border-bottom:1px solid var(--ob-line)">
+        <span style="font-size:15px;font-weight:600">Activity timeline</span>
+        <span style="margin-left:auto;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3)">Audit trail</span>
+      </div>
+      <div style="padding:16px 18px;display:flex;flex-direction:column;gap:0">
+        <sc-for list="{{ events }}" as="e" hint-placeholder-count="6">
+          <div style="display:grid;grid-template-columns:18px 1fr;gap:12px;position:relative">
+            <div style="display:flex;flex-direction:column;align-items:center">
+              <span style="{{ e.dot }}"></span>
+              <span style="{{ e.rail }}"></span>
+            </div>
+            <div style="padding-bottom:18px">
+              <div style="font-size:13px;font-weight:600;text-wrap:pretty">{{ e.text }}</div>
+              <div style="font-size:12px;color:var(--ob-text-3);margin-top:2px"><span style="font-family:var(--ob-mono)">{{ e.time }}</span> · {{ e.who }}</div>
+              <div style="{{ e.metaStyle }}">{{ e.meta }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top:auto;border-top:1px solid var(--ob-line);padding:14px 18px;background:var(--ob-well)">
+        <input placeholder="{{ notePlaceholder }}" disabled="{{ isViewer }}" style="{{ noteStyle }}">
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light' | 'dark'&quot;},&quot;role&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;operator&quot;,&quot;viewer&quot;],&quot;default&quot;:&quot;operator&quot;,&quot;tsType&quot;:&quot;'operator' | 'viewer'&quot;}}">
+class Component extends DCLogic {
+  state = {
+    status: 'Mitigated',
+    assignee: 'R. Villanueva',
+    statusMenu: false,
+    assignMenu: false,
+    secs: 24 * 60 + 11,
+    extra: []
+  };
+
+  componentDidMount() {
+    this.timer = setInterval(() => this.setState(s => ({ secs: Math.max(0, s.secs - 1) })), 1000);
+  }
+  componentWillUnmount() { clearInterval(this.timer); }
+
+  static FLOW = {
+    Investigating: [
+      ['Identified', 'info', 'Cause found, fix not shipped'],
+      ['Mitigated', 'risk', 'Impact reduced, monitoring'],
+      ['Resolved', 'ok', 'Requires a mitigation first', false]
+    ],
+    Identified: [
+      ['Mitigated', 'risk', 'Impact reduced, monitoring'],
+      ['Investigating', 'info', 'Reopen the search for cause']
+    ],
+    Mitigated: [
+      ['Resolved', 'ok', 'Clean for 60m · postmortem due'],
+      ['Investigating', 'info', 'Symptoms returned'],
+      ['Identified', 'info', 'Not a valid step back', false]
+    ],
+    Resolved: [
+      ['Investigating', 'info', 'Reopen — resets the SLA clock'],
+      ['Mitigated', 'risk', 'Closed incidents cannot re-mitigate', false]
+    ]
+  };
+
+  static PEOPLE = [
+    ['R. Villanueva', 'Gatekeeper · on-call'],
+    ['M. Okafor', 'Payments · on-call'],
+    ['A. Bhatt', 'Platform edge'],
+    ['D. Lindqvist', 'Search'],
+    ['S. Aoki', 'Analytics']
+  ];
+
+  now() {
+    const t = new Date(Date.UTC(2026, 7, 19, 14, 59, 0) - this.state.extra.length * -47000);
+    return t.toISOString().slice(11, 19);
+  }
+  log(text, kind, meta) {
+    this.setState(s => ({ extra: s.extra.concat([{ text, kind, meta, time: this.now(), who: this.me().name }]) }));
+  }
+  me() {
+    return this.props.role === 'viewer'
+      ? { name: 'J. Meyer', initials: 'JM' }
+      : { name: 'R. Villanueva', initials: 'RV' };
+  }
+  setStatus(next) {
+    this.setState({ statusMenu: false });
+    if (next === this.state.status) return;
+    this.log('Status changed ' + this.state.status + ' → ' + next, next === 'Resolved' ? 'ok' : (next === 'Mitigated' ? 'risk' : 'info'), '');
+    this.setState({ status: next });
+  }
+  assign(name) {
+    this.setState({ assignMenu: false });
+    if (name === this.state.assignee) return;
+    this.log('Reassigned to ' + name, 'info', '');
+    this.setState({ assignee: name });
+  }
+
+  fmt(n) {
+    const h = Math.floor(n / 3600), m = Math.floor((n % 3600) / 60), s = n % 60;
+    const p = v => (v < 10 ? '0' + v : '' + v);
+    return p(h) + ':' + p(m) + ':' + p(s);
+  }
+
+  renderVals() {
+    const viewer = this.props.role === 'viewer';
+    const st = this.state.status;
+    const kind = st === 'Resolved' ? 'ok' : (st === 'Mitigated' ? 'risk' : 'info');
+    const secs = this.state.secs;
+    const slaKind = st === 'Resolved' ? 'ok' : (secs === 0 ? 'crit' : (secs < 1800 ? 'risk' : 'info'));
+    const pct = Math.max(2, Math.min(100, Math.round(secs / (60 * 60) * 100)));
+
+    const base = [
+      { text: 'Mitigation applied — skew tolerance reverted to 90s', kind: 'risk', time: '14:44:02', who: 'R. Villanueva', meta: 'edge config · change CR-8841' },
+      { text: 'Status changed Identified → Mitigated', kind: 'risk', time: '14:43:55', who: 'R. Villanueva', meta: '' },
+      { text: 'Root cause identified in build a4f9c2e', kind: 'info', time: '14:39:10', who: 'R. Villanueva', meta: 'clock-skew tolerance lowered to 5s' },
+      { text: 'Assigned to R. Villanueva', kind: 'info', time: '14:22:31', who: 'M. Okafor', meta: 'escalated from Payments to Gatekeeper' },
+      { text: 'Severity raised P2 → P1', kind: 'crit', time: '14:21:04', who: 'M. Okafor', meta: '4 services affected' },
+      { text: 'Incident declared from synthetic check', kind: 'crit', time: '14:18:22', who: 'automation', meta: 'oauth-refresh probe failed 3× in 90s' }
+    ];
+    const events = this.state.extra.slice().reverse().concat(base);
+
+    const transitions = (Component.FLOW[st] || []).map(t => {
+      const ok = t[3] !== false;
+      return {
+        label: t[0], note: t[2],
+        style: 'display:flex;flex-direction:column;gap:1px;width:100%;text-align:left;padding:9px 10px;border-radius:10px;border:1px solid transparent;background:transparent;font-family:var(--font-body);color:var(--ob-text);cursor:' + (ok ? 'pointer' : 'not-allowed') + (ok ? '' : ';opacity:.45'),
+        dot: 'width:7px;height:7px;border-radius:999px;flex:none;background:var(--ob-' + t[1] + ')',
+        pick: ok ? () => this.setStatus(t[0]) : () => {}
+      };
+    });
+
+    const people = Component.PEOPLE.map(p => ({
+      name: p[0], team: p[1],
+      initials: p[0].replace('. ', '').slice(0, 2).toUpperCase(),
+      style: 'display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:8px 10px;border-radius:10px;border:1px solid ' + (p[0] === this.state.assignee ? 'var(--ob-accent)' : 'transparent') + ';background:' + (p[0] === this.state.assignee ? 'var(--ob-accent-tint)' : 'transparent') + ';font-family:var(--font-body);color:var(--ob-text);cursor:pointer',
+      avatar: 'width:24px;height:24px;border-radius:999px;flex:none;display:grid;place-items:center;font-size:10px;font-weight:600;background:var(--ob-info-tint);color:var(--ob-info-ink)',
+      pick: () => this.assign(p[0])
+    }));
+
+    const btn = (fill) => 'height:36px;padding:0 15px;border-radius:var(--ob-r-sm);font-family:var(--font-body);font-size:13px;font-weight:600;'
+      + (fill
+        ? 'border:1px solid var(--ob-accent);background:var(--ob-accent);color:var(--ob-surface)'
+        : 'border:1px solid var(--ob-line-2);background:var(--ob-surface);color:var(--ob-text)')
+      + (viewer ? ';opacity:.4;cursor:not-allowed' : ';cursor:pointer');
+
+    return {
+      theme: this.props.theme || 'light',
+      isViewer: viewer,
+      roleLabel: viewer ? 'Viewer · read only' : 'Operator',
+      roleBadge: 'display:inline-flex;align-items:center;padding:4px 11px;border-radius:999px;font-size:12px;font-weight:600;'
+        + (viewer ? 'background:var(--ob-well);color:var(--ob-text-2);border:1px dashed var(--ob-line-2)'
+          : 'background:var(--ob-ok-tint);color:var(--ob-ok-ink)'),
+      meName: this.me().name,
+      meInitials: this.me().initials,
+      status: st,
+      statusBadge: 'display:inline-flex;align-items:center;gap:7px;padding:4px 12px;border-radius:999px;font-size:13px;font-weight:600;background:var(--ob-' + kind + '-tint);color:var(--ob-' + kind + '-ink)',
+      statusDot: 'width:7px;height:7px;border-radius:999px;background:var(--ob-' + kind + ')',
+      assignee: this.state.assignee,
+      slaTime: st === 'Resolved' ? 'met' : this.fmt(secs),
+      slaNote: st === 'Resolved' ? 'Closed inside target · 41m total' : (secs < 1800 ? 'Inside the last 30 minutes' : 'Target 60m to mitigate'),
+      slaCardStyle: 'width:224px;flex:none;padding:14px 16px;border-radius:var(--ob-r-lg);background:var(--ob-surface);border:1px solid var(--ob-line);border-left:3px solid var(--ob-' + slaKind + ');box-shadow:var(--ob-shadow)',
+      slaTimeStyle: 'font-family:var(--ob-mono);font-size:30px;font-weight:600;line-height:1;letter-spacing:-.02em;color:var(--ob-' + slaKind + '-ink)',
+      slaBarStyle: 'width:' + pct + '%;height:100%;background:var(--ob-' + slaKind + ')',
+      primaryBtn: btn(true),
+      secondaryBtn: btn(false),
+      ghostBtn: 'height:36px;width:36px;border-radius:var(--ob-r-sm);border:1px solid var(--ob-line-2);background:var(--ob-surface);color:var(--ob-text-2);font-size:15px;' + (viewer ? 'opacity:.4;cursor:not-allowed' : 'cursor:pointer'),
+      statusMenuOpen: !viewer && this.state.statusMenu,
+      assignMenuOpen: !viewer && this.state.assignMenu,
+      toggleStatusMenu: () => { if (!viewer) this.setState({ statusMenu: !this.state.statusMenu, assignMenu: false }); },
+      toggleAssignMenu: () => { if (!viewer) this.setState({ assignMenu: !this.state.assignMenu, statusMenu: false }); },
+      transitions: transitions,
+      people: people,
+      notePlaceholder: viewer ? 'Viewers cannot post updates' : 'Add a timeline note…',
+      noteStyle: 'width:100%;height:36px;padding:0 12px;border:1px solid var(--ob-line-2);border-radius:var(--ob-r-sm);background:var(--ob-surface);color:var(--ob-text);font-family:var(--font-body);font-size:13px'
+        + (viewer ? ';opacity:.5;cursor:not-allowed' : ''),
+      events: events.map((e, i) => ({
+        text: e.text, time: e.time, who: e.who, meta: e.meta,
+        dot: 'width:9px;height:9px;border-radius:999px;flex:none;margin-top:5px;background:var(--ob-' + e.kind + ')',
+        rail: 'flex:1;width:1px;background:var(--ob-line);margin-top:4px;' + (i === events.length - 1 ? 'display:none' : ''),
+        metaStyle: e.meta ? 'font-size:12px;color:var(--ob-text-2);margin-top:6px;background:var(--ob-well);border-radius:8px;padding:6px 9px' : 'display:none'
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

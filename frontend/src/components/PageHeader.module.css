@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 24px;
+  /* No negative top margin: .content has no top padding to cancel (see its comment), and a
+     negative top margin here would break this margin-bottom's contribution to the next sibling
+     now that this is position: sticky. */
+  margin: 0 -24px 20px;
+  border-bottom: 1px solid var(--ob-line);
+  background: var(--ob-surface);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.title {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin: 0;
+}
+.description {
+  font-size: 12px;
+  color: var(--ob-text-3);
+}
+.actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

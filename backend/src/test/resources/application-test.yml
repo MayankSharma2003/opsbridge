@@ -1,0 +1,25 @@
+# Used only by the full-context smoke test (OpsBridgeApplicationTests), to prove the Spring bean
+# graph wires up correctly without needing a real Postgres/Docker. Hibernate generates the schema
+# directly from the entities here (Flyway disabled) -- this does NOT verify the Postgres-specific
+# Flyway migrations, which is a separate, manual docker-compose check.
+spring:
+  datasource:
+    url: jdbc:h2:mem:opsbridge-test;MODE=PostgreSQL
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  flyway:
+    enabled: false
+
+opsbridge:
+  # Belt and braces so no test can ever reach a real SMTP server: this switch is checked before
+  # anything is composed, and spring.mail.host is left unset above so no JavaMailSender bean even
+  # exists to send with.
+  mail:
+    enabled: false
+    from: ""
+    notify-to: ""
+  jwt:
+    secret: test-only-jwt-signing-secret-never-used-outside-automated-tests

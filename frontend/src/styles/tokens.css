@@ -1,0 +1,97 @@
+/*
+ * Design tokens extracted verbatim from the approved design prototypes (design/*.dc.html) --
+ * same variable names and values, so future pages built against those prototypes drop in without
+ * retuning colors. Light is the default; dark overrides the same variables under both an explicit
+ * [data-ob-theme="dark"] (the future Settings toggle) and a system dark-mode preference when no
+ * explicit choice has been made yet.
+ */
+:root {
+  --ob-bg: #f3eee6;
+  --ob-surface: #fdfaf5;
+  --ob-well: #eae3d8;
+  --ob-line: #ded5c6;
+  --ob-line-2: #c7bcaa;
+  --ob-text: #241f19;
+  --ob-text-2: #6b6153;
+  --ob-text-3: #948a7c;
+  --ob-accent: #c67139;
+  --ob-accent-hi: #a95a28;
+  --ob-accent-tint: #f8e7d8;
+  --ob-crit: #b23a2e;
+  --ob-crit-tint: #f8e0dc;
+  --ob-crit-ink: #8a2a20;
+  --ob-risk: #9c6c0b;
+  --ob-risk-tint: #f8ecce;
+  --ob-risk-ink: #7a5407;
+  --ob-ok: #4f7a3c;
+  --ob-ok-tint: #e6eed8;
+  --ob-ok-ink: #3c5e2d;
+  --ob-info: #2f6390;
+  --ob-info-tint: #dfe9f2;
+  --ob-info-ink: #254e73;
+  --ob-shadow: 0 1px 2px rgba(46, 43, 37, 0.1), 0 8px 24px rgba(46, 43, 37, 0.06);
+  --ob-shadow-lg: 0 22px 60px rgba(30, 26, 20, 0.14);
+  --ob-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --ob-r-sm: 8px;
+  --ob-r: 12px;
+  --ob-r-lg: 18px;
+  --font-body: 'Figtree', system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-ob-theme='light']) {
+    --ob-bg: #17150f;
+    --ob-surface: #201d16;
+    --ob-well: #2a261e;
+    --ob-line: #38332a;
+    --ob-line-2: #4e473c;
+    --ob-text: #f3ece0;
+    --ob-text-2: #a89d8b;
+    --ob-text-3: #7c7263;
+    --ob-accent: #dd8b4f;
+    --ob-accent-hi: #efa870;
+    --ob-accent-tint: #37281c;
+    --ob-crit: #ec8377;
+    --ob-crit-tint: #3a201c;
+    --ob-crit-ink: #f6b8af;
+    --ob-risk: #dfad48;
+    --ob-risk-tint: #352a15;
+    --ob-risk-ink: #f0cf8b;
+    --ob-ok: #93bd72;
+    --ob-ok-tint: #25301b;
+    --ob-ok-ink: #c0d9a8;
+    --ob-info: #7cafd8;
+    --ob-info-tint: #1b2833;
+    --ob-info-ink: #b3d1e8;
+    --ob-shadow: 0 1px 0 rgba(255, 255, 255, 0.04), 0 10px 28px rgba(0, 0, 0, 0.45);
+    --ob-shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.6);
+  }
+}
+
+:root[data-ob-theme='dark'] {
+  --ob-bg: #17150f;
+  --ob-surface: #201d16;
+  --ob-well: #2a261e;
+  --ob-line: #38332a;
+  --ob-line-2: #4e473c;
+  --ob-text: #f3ece0;
+  --ob-text-2: #a89d8b;
+  --ob-text-3: #7c7263;
+  --ob-accent: #dd8b4f;
+  --ob-accent-hi: #efa870;
+  --ob-accent-tint: #37281c;
+  --ob-crit: #ec8377;
+  --ob-crit-tint: #3a201c;
+  --ob-crit-ink: #f6b8af;
+  --ob-risk: #dfad48;
+  --ob-risk-tint: #352a15;
+  --ob-risk-ink: #f0cf8b;
+  --ob-ok: #93bd72;
+  --ob-ok-tint: #25301b;
+  --ob-ok-ink: #c0d9a8;
+  --ob-info: #7cafd8;
+  --ob-info-tint: #1b2833;
+  --ob-info-ink: #b3d1e8;
+  --ob-shadow: 0 1px 0 rgba(255, 255, 255, 0.04), 0 10px 28px rgba(0, 0, 0, 0.45);
+  --ob-shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.6);
+}

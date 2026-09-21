@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-4b89cee6-cb9a-4401-bf8d-62d51fbeaab0/styles.css">
+<script src="_ds/organic-4b89cee6-cb9a-4401-bf8d-62d51fbeaab0/_ds_bundle.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+[data-ob-theme="light"]{
+  --ob-bg:#f3eee6; --ob-surface:#fdfaf5; --ob-well:#eae3d8; --ob-line:#ded5c6; --ob-line-2:#c7bcaa;
+  --ob-text:#241f19; --ob-text-2:#6b6153; --ob-text-3:#948a7c;
+  --ob-accent:#c67139; --ob-accent-hi:#a95a28; --ob-accent-tint:#f8e7d8;
+  --ob-crit:#b23a2e; --ob-crit-tint:#f8e0dc; --ob-crit-ink:#8a2a20;
+  --ob-risk:#9c6c0b; --ob-risk-tint:#f8ecce; --ob-risk-ink:#7a5407;
+  --ob-ok:#4f7a3c;  --ob-ok-tint:#e6eed8;  --ob-ok-ink:#3c5e2d;
+  --ob-info:#2f6390; --ob-info-tint:#dfe9f2; --ob-info-ink:#254e73;
+  --ob-shadow:0 1px 2px rgba(46,43,37,.10),0 8px 24px rgba(46,43,37,.06);
+}
+[data-ob-theme="dark"]{
+  --ob-bg:#17150f; --ob-surface:#201d16; --ob-well:#2a261e; --ob-line:#38332a; --ob-line-2:#4e473c;
+  --ob-text:#f3ece0; --ob-text-2:#a89d8b; --ob-text-3:#7c7263;
+  --ob-accent:#dd8b4f; --ob-accent-hi:#efa870; --ob-accent-tint:#37281c;
+  --ob-crit:#ec8377; --ob-crit-tint:#3a201c; --ob-crit-ink:#f6b8af;
+  --ob-risk:#dfad48; --ob-risk-tint:#352a15; --ob-risk-ink:#f0cf8b;
+  --ob-ok:#93bd72;  --ob-ok-tint:#25301b;  --ob-ok-ink:#c0d9a8;
+  --ob-info:#7cafd8; --ob-info-tint:#1b2833; --ob-info-ink:#b3d1e8;
+  --ob-shadow:0 1px 0 rgba(255,255,255,.04),0 10px 28px rgba(0,0,0,.45);
+}
+:root{ --ob-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace; --ob-r-sm:8px; --ob-r:12px; --ob-r-lg:18px; }
+html,body{margin:0;background:#f3eee6}
+*{box-sizing:border-box}
+@keyframes ob-shimmer{0%{opacity:.45}50%{opacity:.85}100%{opacity:.45}}
+@keyframes ob-spin{to{transform:rotate(360deg)}}
+</style>
+</helmet>
+
+<div data-ob-theme="{{ theme }}" style="display:grid;grid-template-columns:216px 1fr;min-height:max(860px,100vh);background:var(--ob-bg);color:var(--ob-text);font-family:var(--font-body);font-size:14px;line-height:1.5">
+
+  <div style="border-right:1px solid var(--ob-line);background:var(--ob-surface);display:flex;flex-direction:column;padding:16px 12px">
+    <div style="display:flex;align-items:center;gap:10px;padding:4px 8px 20px">
+      <div style="width:26px;height:26px;border-radius:9px;background:var(--ob-accent);display:grid;place-items:center;color:var(--ob-surface);font-size:14px;font-weight:600;line-height:1">O</div>
+      <span style="font-size:16px;font-weight:600;letter-spacing:-.015em">OpsBridge</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:2px">
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;color:var(--ob-text-2);font-size:13px">Dashboard</div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;background:var(--ob-accent-tint);color:var(--ob-accent-hi);font-weight:600;font-size:13px"><span style="width:6px;height:6px;border-radius:999px;background:var(--ob-accent)"></span>Incidents<span style="margin-left:auto;font-family:var(--ob-mono);font-size:11px">23</span></div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;color:var(--ob-text-2);font-size:13px">Services</div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;color:var(--ob-text-2);font-size:13px">On-call</div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;color:var(--ob-text-2);font-size:13px">Postmortems</div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;color:var(--ob-text-2);font-size:13px">Settings</div>
+    </div>
+    <div style="margin-top:auto;border-top:1px solid var(--ob-line);padding-top:14px">
+      <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:8px">Saved views</div>
+      <div style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--ob-text-2)">
+        <div>My open P1s</div>
+        <div>Breaching in 1h</div>
+        <div>Unassigned</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;min-width:0">
+    <div style="display:flex;align-items:center;gap:14px;padding:14px 24px;border-bottom:1px solid var(--ob-line);background:var(--ob-surface)">
+      <div>
+        <div style="font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.2">Incidents</div>
+        <div style="font-size:12px;color:var(--ob-text-3);font-family:var(--ob-mono)">{{ countLine }}</div>
+      </div>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+        <input value="{{ query }}" onChange="{{ onQuery }}" placeholder="Search id, title, service…" style="width:262px;height:34px;padding:0 13px;border:1px solid var(--ob-line-2);border-radius:var(--ob-r-sm);background:var(--ob-bg);color:var(--ob-text);font-family:var(--font-body);font-size:13px">
+        <button style="height:34px;padding:0 14px;border:1px solid var(--ob-line-2);border-radius:var(--ob-r-sm);background:var(--ob-surface);color:var(--ob-text);font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer">Export</button>
+        <button style="height:34px;padding:0 15px;border:1px solid var(--ob-accent);border-radius:var(--ob-r-sm);background:var(--ob-accent);color:var(--ob-surface);font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer">Declare incident</button>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:12px 24px;border-bottom:1px solid var(--ob-line);background:var(--ob-surface)">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3)">Status</span>
+        <div style="display:flex;border:1px solid var(--ob-line);border-radius:999px;overflow:hidden;font-size:12px;font-weight:600">
+          <button onClick="{{ statusAll }}" style="{{ sAll }}">All</button>
+          <button onClick="{{ statusBreached }}" style="{{ sBreach }}">Breached</button>
+          <button onClick="{{ statusInvestigating }}" style="{{ sInv }}">Investigating</button>
+          <button onClick="{{ statusMitigated }}" style="{{ sMit }}">Mitigated</button>
+          <button onClick="{{ statusResolved }}" style="{{ sRes }}">Resolved</button>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3)">Priority</span>
+        <div style="display:flex;gap:6px">
+          <button onClick="{{ togP1 }}" style="{{ p1 }}">P1</button>
+          <button onClick="{{ togP2 }}" style="{{ p2 }}">P2</button>
+          <button onClick="{{ togP3 }}" style="{{ p3 }}">P3</button>
+          <button onClick="{{ togP4 }}" style="{{ p4 }}">P4</button>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3)">Service</span>
+        <select value="{{ service }}" onChange="{{ onService }}" style="height:30px;padding:0 10px;border:1px solid var(--ob-line-2);border-radius:999px;background:var(--ob-bg);color:var(--ob-text);font-family:var(--font-body);font-size:12px;font-weight:600">
+          <option value="all">All services</option>
+          <option value="payments-api">payments-api</option>
+          <option value="identity-svc">identity-svc</option>
+          <option value="search-core">search-core</option>
+          <option value="edge-gw">edge-gw</option>
+          <option value="events-bus">events-bus</option>
+          <option value="analytics-api">analytics-api</option>
+        </select>
+      </div>
+      <button onClick="{{ clearFilters }}" style="margin-left:auto;height:30px;padding:0 12px;border:1px solid transparent;border-radius:999px;background:transparent;color:var(--ob-text-2);font-family:var(--font-body);font-size:12px;font-weight:600;cursor:pointer">Clear filters</button>
+    </div>
+
+    <div style="padding:18px 24px;flex:1;display:flex;flex-direction:column">
+      <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r-lg);background:var(--ob-surface);box-shadow:var(--ob-shadow);overflow:hidden;display:flex;flex-direction:column;flex:1">
+
+        <sc-if value="{{ isLoading }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:0">
+            <div style="display:flex;align-items:center;gap:10px;padding:13px 18px;border-bottom:1px solid var(--ob-line)">
+              <span style="width:14px;height:14px;border-radius:999px;border:2px solid var(--ob-line-2);border-top-color:var(--ob-accent);animation:ob-spin .8s linear infinite"></span>
+              <span style="font-size:13px;color:var(--ob-text-2)">Loading incidents from 4 regions…</span>
+            </div>
+            <div style="display:flex;flex-direction:column">
+              <div style="display:grid;grid-template-columns:96px 1fr 130px 48px 132px 96px 120px;gap:16px;padding:13px 18px;border-bottom:1px solid var(--ob-line);animation:ob-shimmer 1.4s ease-in-out infinite">
+                <div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div>
+              </div>
+              <div style="display:grid;grid-template-columns:96px 1fr 130px 48px 132px 96px 120px;gap:16px;padding:13px 18px;border-bottom:1px solid var(--ob-line);animation:ob-shimmer 1.4s ease-in-out .1s infinite">
+                <div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div>
+              </div>
+              <div style="display:grid;grid-template-columns:96px 1fr 130px 48px 132px 96px 120px;gap:16px;padding:13px 18px;border-bottom:1px solid var(--ob-line);animation:ob-shimmer 1.4s ease-in-out .2s infinite">
+                <div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div>
+              </div>
+              <div style="display:grid;grid-template-columns:96px 1fr 130px 48px 132px 96px 120px;gap:16px;padding:13px 18px;border-bottom:1px solid var(--ob-line);animation:ob-shimmer 1.4s ease-in-out .3s infinite">
+                <div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div>
+              </div>
+              <div style="display:grid;grid-template-columns:96px 1fr 130px 48px 132px 96px 120px;gap:16px;padding:13px 18px;border-bottom:1px solid var(--ob-line);animation:ob-shimmer 1.4s ease-in-out .4s infinite">
+                <div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div>
+              </div>
+              <div style="display:grid;grid-template-columns:96px 1fr 130px 48px 132px 96px 120px;gap:16px;padding:13px 18px;animation:ob-shimmer 1.4s ease-in-out .5s infinite">
+                <div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div><div style="height:10px;border-radius:999px;background:var(--ob-well)"></div>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:80px 24px;text-align:center">
+            <div style="width:66px;height:66px;border-radius:999px;background:var(--ob-ok-tint);display:grid;place-items:center">
+              <span style="width:22px;height:22px;border-radius:999px;border:2.75px solid var(--ob-ok)"></span>
+            </div>
+            <div style="font-size:18px;font-weight:600">Nothing matches these filters</div>
+            <div style="font-size:13px;color:var(--ob-text-2);max-width:46ch;text-wrap:pretty">No incidents are P1 and resolved in the last 24 hours for analytics-api. Widen the window or clear a filter — a quiet board is the good outcome.</div>
+            <div style="display:flex;gap:8px;margin-top:4px">
+              <button onClick="{{ clearFilters }}" style="height:34px;padding:0 15px;border:1px solid var(--ob-accent);border-radius:var(--ob-r-sm);background:var(--ob-accent);color:var(--ob-surface);font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer">Clear filters</button>
+              <button style="height:34px;padding:0 15px;border:1px solid var(--ob-line-2);border-radius:var(--ob-r-sm);background:var(--ob-surface);color:var(--ob-text);font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer">Last 7 days</button>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ showTable }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <table style="width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums">
+              <thead>
+                <tr style="background:var(--ob-well)">
+                  <th style="text-align:left;padding:9px 18px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600">ID</th>
+                  <th style="text-align:left;padding:9px 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600">Title</th>
+                  <th style="text-align:left;padding:9px 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600">Service</th>
+                  <th style="text-align:left;padding:9px 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600">Pri</th>
+                  <th style="text-align:left;padding:9px 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600">Status</th>
+                  <th style="text-align:right;padding:9px 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600">SLA</th>
+                  <th style="text-align:left;padding:9px 18px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600">Assignee</th>
+                </tr>
+              </thead>
+              <tbody>
+                <sc-for list="{{ rows }}" as="row" hint-placeholder-count="8">
+                  <tr style="{{ row.rowStyle }}" style-hover="background:var(--ob-well)">
+                    <td style="padding:10px 18px;font-family:var(--ob-mono);font-size:12px;color:var(--ob-text-2);white-space:nowrap">{{ row.id }}</td>
+                    <td style="padding:10px 12px;font-weight:600">{{ row.title }}</td>
+                    <td style="padding:10px 12px;font-family:var(--ob-mono);font-size:12px;color:var(--ob-text-2)">{{ row.service }}</td>
+                    <td style="padding:10px 12px"><span style="{{ row.priStyle }}">{{ row.pri }}</span></td>
+                    <td style="padding:10px 12px"><span style="{{ row.statusStyle }}"><span style="{{ row.dotStyle }}"></span>{{ row.status }}</span></td>
+                    <td style="padding:10px 12px;text-align:right;white-space:nowrap;font-family:var(--ob-mono);font-size:12px;{{ row.slaStyle }}">{{ row.sla }}</td>
+                    <td style="padding:10px 18px;white-space:nowrap">
+                      <span style="display:inline-flex;align-items:center;gap:8px;color:var(--ob-text-2)">
+                        <span style="{{ row.avatarStyle }}">{{ row.initials }}</span>{{ row.assignee }}
+                      </span>
+                    </td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 18px;border-top:1px solid var(--ob-line);background:var(--ob-surface)">
+              <span style="font-size:12px;color:var(--ob-text-3);font-family:var(--ob-mono)">{{ pageLine }}</span>
+              <div style="margin-left:auto;display:flex;align-items:center;gap:6px">
+                <button onClick="{{ prev }}" style="{{ prevStyle }}">Prev</button>
+                <button onClick="{{ goto1 }}" style="{{ pg1 }}">1</button>
+                <button onClick="{{ goto2 }}" style="{{ pg2 }}">2</button>
+                <button onClick="{{ goto3 }}" style="{{ pg3 }}">3</button>
+                <button onClick="{{ next }}" style="{{ nextStyle }}">Next</button>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light' | 'dark'&quot;},&quot;mode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;data&quot;,&quot;loading&quot;,&quot;empty&quot;],&quot;default&quot;:&quot;data&quot;,&quot;tsType&quot;:&quot;'data' | 'loading' | 'empty'&quot;}}">
+class Component extends DCLogic {
+  state = { q: '', status: 'All', pri: [], service: 'all', page: 1 };
+
+  static DATA = [
+    ['INC-2041', 'Checkout latency above 2s', 'payments-api', 'P1', 'Breached', '−00:04:12', 'M. Okafor'],
+    ['INC-2039', 'Auth token refresh failures', 'identity-svc', 'P1', 'Mitigated', '00:24:11', 'R. Villanueva'],
+    ['INC-2038', 'Card tokenisation errors 3%', 'payments-api', 'P1', 'Investigating', '00:41:56', 'M. Okafor'],
+    ['INC-2036', 'Search indexer backlog', 'search-core', 'P2', 'Investigating', '01:12:40', 'D. Lindqvist'],
+    ['INC-2034', 'Session cookies dropped on renew', 'identity-svc', 'P2', 'Mitigated', '01:38:09', 'R. Villanueva'],
+    ['INC-2031', 'Elevated 5xx on edge nodes', 'edge-gw', 'P2', 'Investigating', '02:48:05', 'A. Bhatt'],
+    ['INC-2030', 'TLS renewal warning eu-west-2', 'edge-gw', 'P3', 'Monitoring', '04:10:33', 'A. Bhatt'],
+    ['INC-2028', 'Webhook delivery delays', 'events-bus', 'P3', 'Mitigated', '06:03:22', 'Unassigned'],
+    ['INC-2026', 'Consumer lag on billing topic', 'events-bus', 'P2', 'Investigating', '00:52:14', 'Unassigned'],
+    ['INC-2024', 'Duplicate alert routing to Slack', 'events-bus', 'P4', 'Monitoring', '11:40:00', 'S. Aoki'],
+    ['INC-2022', 'Facet counts stale in search', 'search-core', 'P3', 'Mitigated', '07:21:48', 'D. Lindqvist'],
+    ['INC-2019', 'Report export timeouts', 'analytics-api', 'P4', 'Resolved', 'met', 'S. Aoki'],
+    ['INC-2017', 'Dashboard query cost spike', 'analytics-api', 'P3', 'Resolved', 'met', 'S. Aoki'],
+    ['INC-2015', 'Refund job retried 40×', 'payments-api', 'P2', 'Resolved', 'met', 'M. Okafor'],
+    ['INC-2012', 'SSO metadata drift', 'identity-svc', 'P3', 'Resolved', 'met', 'R. Villanueva'],
+    ['INC-2010', 'CDN purge queue stalled', 'edge-gw', 'P2', 'Resolved', 'met', 'A. Bhatt'],
+    ['INC-2008', 'Index rebuild exceeded window', 'search-core', 'P3', 'Resolved', 'breached', 'D. Lindqvist'],
+    ['INC-2005', 'Event replay duplicated 1.2k msgs', 'events-bus', 'P2', 'Resolved', 'met', 'S. Aoki'],
+    ['INC-2003', 'Latency regression after deploy', 'payments-api', 'P1', 'Resolved', 'breached', 'M. Okafor'],
+    ['INC-2001', 'Nightly export missing rows', 'analytics-api', 'P4', 'Resolved', 'met', 'S. Aoki'],
+    ['INC-1998', 'Rate limiter false positives', 'edge-gw', 'P3', 'Resolved', 'met', 'A. Bhatt'],
+    ['INC-1996', 'Login page slow in APAC', 'identity-svc', 'P3', 'Resolved', 'met', 'R. Villanueva'],
+    ['INC-1994', 'Stale feature flag cache', 'search-core', 'P4', 'Resolved', 'met', 'D. Lindqvist']
+  ];
+
+  kindFor(status, sla) {
+    if (status === 'Breached' || sla === 'breached') return 'crit';
+    if (status === 'Mitigated') return 'risk';
+    if (status === 'Resolved') return 'ok';
+    if (status === 'Investigating') return 'info';
+    return 'neutral';
+  }
+  slaKind(sla) {
+    if (sla.indexOf('−') === 0 || sla === 'breached') return 'crit';
+    if (sla === 'met') return 'ok';
+    const h = parseInt(sla.split(':')[0], 10);
+    return isNaN(h) ? 'neutral' : (h < 1 ? 'risk' : 'neutral');
+  }
+  chip(active, kind) {
+    const on = 'background:var(--ob-' + kind + '-tint);color:var(--ob-' + kind + '-ink);border:1px solid var(--ob-' + kind + ')';
+    return 'height:28px;min-width:38px;padding:0 10px;border-radius:999px;font-family:var(--ob-mono);font-size:12px;font-weight:600;cursor:pointer;'
+      + (active ? on : 'background:transparent;color:var(--ob-text-2);border:1px solid var(--ob-line-2)');
+  }
+  seg(active) {
+    return 'height:28px;padding:0 12px;border:0;cursor:pointer;font-family:var(--font-body);font-size:12px;font-weight:600;'
+      + (active ? 'background:var(--ob-accent);color:var(--ob-surface)' : 'background:transparent;color:var(--ob-text-2)');
+  }
+  pgBtn(active, disabled) {
+    return 'height:28px;min-width:28px;padding:0 10px;border-radius:8px;font-family:var(--font-body);font-size:12px;font-weight:600;cursor:pointer;'
+      + (active ? 'background:var(--ob-accent);color:var(--ob-surface);border:1px solid var(--ob-accent)'
+        : 'background:var(--ob-surface);color:var(--ob-text-2);border:1px solid var(--ob-line-2)')
+      + (disabled ? ';opacity:.45' : '');
+  }
+  togglePri(p) {
+    const has = this.state.pri.indexOf(p) >= 0;
+    this.setState({ pri: has ? this.state.pri.filter(x => x !== p) : this.state.pri.concat([p]), page: 1 });
+  }
+
+  renderVals() {
+    const mode = this.props.mode || 'data';
+    const s = this.state;
+    const per = 8;
+    const all = Component.DATA.filter(d => {
+      if (s.status !== 'All' && d[4] !== s.status) return false;
+      if (s.pri.length && s.pri.indexOf(d[3]) < 0) return false;
+      if (s.service !== 'all' && d[2] !== s.service) return false;
+      if (s.q) {
+        const q = s.q.toLowerCase();
+        if ((d[0] + ' ' + d[1] + ' ' + d[2] + ' ' + d[6]).toLowerCase().indexOf(q) < 0) return false;
+      }
+      return true;
+    });
+    const pages = Math.max(1, Math.ceil(all.length / per));
+    const page = Math.min(s.page, pages);
+    const slice = all.slice((page - 1) * per, page * per);
+    const empty = mode === 'empty' || (mode === 'data' && all.length === 0);
+
+    const rows = slice.map(d => {
+      const k = this.kindFor(d[4], d[5]);
+      const sk = this.slaKind(d[5]);
+      const priMap = {
+        P1: 'background:var(--ob-crit);color:var(--ob-surface);border:1px solid var(--ob-crit)',
+        P2: 'background:var(--ob-crit-tint);color:var(--ob-crit-ink);border:1px solid var(--ob-crit)',
+        P3: 'background:var(--ob-risk-tint);color:var(--ob-risk-ink);border:1px solid var(--ob-risk)',
+        P4: 'background:var(--ob-well);color:var(--ob-text-2);border:1px solid var(--ob-line-2)'
+      };
+      const badge = k === 'neutral'
+        ? 'background:var(--ob-well);color:var(--ob-text-2)'
+        : 'background:var(--ob-' + k + '-tint);color:var(--ob-' + k + '-ink)';
+      const initials = d[6] === 'Unassigned' ? '?' : d[6].replace('. ', '').slice(0, 2).toUpperCase();
+      return {
+        id: d[0], title: d[1], service: d[2], pri: d[3], status: d[4], sla: d[5], assignee: d[6], initials: initials,
+        rowStyle: 'border-top:1px solid var(--ob-line);cursor:pointer'
+          + (d[4] === 'Breached' ? ';box-shadow:inset 3px 0 0 var(--ob-crit)' : ''),
+        priStyle: 'display:inline-flex;padding:2px 9px;border-radius:6px;font-family:var(--ob-mono);font-size:12px;font-weight:600;' + priMap[d[3]],
+        statusStyle: 'display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap;' + badge,
+        dotStyle: 'width:6px;height:6px;border-radius:999px;flex:none;background:var(--ob-' + (k === 'neutral' ? 'text-3' : k) + ')',
+        slaStyle: sk === 'neutral' ? 'color:var(--ob-text-2)' : 'color:var(--ob-' + sk + '-ink);font-weight:600',
+        avatarStyle: 'width:22px;height:22px;border-radius:999px;display:grid;place-items:center;font-size:10px;font-weight:600;'
+          + (d[6] === 'Unassigned'
+            ? 'background:var(--ob-well);color:var(--ob-text-3);border:1px dashed var(--ob-line-2)'
+            : 'background:var(--ob-info-tint);color:var(--ob-info-ink)')
+      };
+    });
+
+    return {
+      theme: this.props.theme || 'light',
+      rows: rows,
+      isLoading: mode === 'loading',
+      isEmpty: mode !== 'loading' && empty,
+      showTable: mode !== 'loading' && !empty,
+      countLine: mode === 'loading' ? 'syncing…' : all.length + ' matching · 9 open · 1 breached',
+      pageLine: all.length ? ((page - 1) * per + 1) + '–' + Math.min(page * per, all.length) + ' of ' + all.length : '0 of 0',
+      query: s.q,
+      onQuery: e => this.setState({ q: e.target.value, page: 1 }),
+      service: s.service,
+      onService: e => this.setState({ service: e.target.value, page: 1 }),
+      statusAll: () => this.setState({ status: 'All', page: 1 }),
+      statusBreached: () => this.setState({ status: 'Breached', page: 1 }),
+      statusInvestigating: () => this.setState({ status: 'Investigating', page: 1 }),
+      statusMitigated: () => this.setState({ status: 'Mitigated', page: 1 }),
+      statusResolved: () => this.setState({ status: 'Resolved', page: 1 }),
+      sAll: this.seg(s.status === 'All'),
+      sBreach: this.seg(s.status === 'Breached'),
+      sInv: this.seg(s.status === 'Investigating'),
+      sMit: this.seg(s.status === 'Mitigated'),
+      sRes: this.seg(s.status === 'Resolved'),
+      togP1: () => this.togglePri('P1'), togP2: () => this.togglePri('P2'),
+      togP3: () => this.togglePri('P3'), togP4: () => this.togglePri('P4'),
+      p1: this.chip(s.pri.indexOf('P1') >= 0, 'crit'),
+      p2: this.chip(s.pri.indexOf('P2') >= 0, 'crit'),
+      p3: this.chip(s.pri.indexOf('P3') >= 0, 'risk'),
+      p4: this.chip(s.pri.indexOf('P4') >= 0, 'ok'),
+      clearFilters: () => this.setState({ q: '', status: 'All', pri: [], service: 'all', page: 1 }),
+      prev: () => this.setState({ page: Math.max(1, page - 1) }),
+      next: () => this.setState({ page: Math.min(pages, page + 1) }),
+      goto1: () => this.setState({ page: 1 }),
+      goto2: () => this.setState({ page: 2 }),
+      goto3: () => this.setState({ page: 3 }),
+      prevStyle: this.pgBtn(false, page === 1),
+      nextStyle: this.pgBtn(false, page === pages),
+      pg1: this.pgBtn(page === 1), pg2: this.pgBtn(page === 2), pg3: this.pgBtn(page === 3)
+    };
+  }
+}
+</script>
+</body>
+</html>

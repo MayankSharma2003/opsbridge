@@ -1,0 +1,147 @@
+.shell {
+  display: grid;
+  grid-template-columns: 216px 1fr;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--ob-bg);
+  color: var(--ob-text);
+  font-family: var(--font-body);
+}
+
+.sidebar {
+  border-right: 1px solid var(--ob-line);
+  background: var(--ob-surface);
+  display: flex;
+  flex-direction: column;
+  padding: 16px 12px;
+  overflow-y: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 8px 20px;
+}
+.brandMark {
+  width: 26px;
+  height: 26px;
+  border-radius: 9px;
+  background: var(--ob-accent);
+  color: var(--ob-surface);
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+}
+.brandName {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: var(--ob-text-2);
+  font-size: 13px;
+  font-weight: 500;
+}
+.navItem:hover {
+  background: var(--ob-well);
+  text-decoration: none;
+}
+.navItemActive {
+  background: var(--ob-accent-tint);
+  color: var(--ob-accent-hi);
+  font-weight: 600;
+}
+
+.sidebarFooter {
+  margin-top: auto;
+  border-top: 1px solid var(--ob-line);
+  padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.userLine {
+  font-size: 12px;
+  color: var(--ob-text-2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.roleBadge {
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ob-accent-hi);
+  background: var(--ob-accent-tint);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.signOut {
+  border: 1px solid var(--ob-line-2);
+  background: transparent;
+  color: var(--ob-text-2);
+  border-radius: var(--ob-r-sm);
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+}
+.signOut:hover {
+  background: var(--ob-well);
+  color: var(--ob-text);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.content {
+  /* No top padding: PageHeader sits flush against the scroll pane's top edge (see its own
+     comment) -- giving it a negative top margin to cancel a real top padding here broke its
+     margin-bottom's contribution to the next sibling once it became position: sticky. */
+  padding: 0 24px 20px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.liveStatus {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: var(--ob-text-3);
+}
+.liveDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  flex: none;
+}
+.liveDotOn {
+  background: var(--ob-ok);
+}
+.liveDotOff {
+  background: var(--ob-text-3);
+}

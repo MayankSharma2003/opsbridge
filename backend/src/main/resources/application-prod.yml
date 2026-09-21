@@ -1,0 +1,9 @@
+logging:
+  level:
+    root: WARN
+    io.opsbridge: INFO
+    org.hibernate.SQL: WARN
+
+spring:
+  jpa:
+    show-sql: false

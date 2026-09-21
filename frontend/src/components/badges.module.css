@@ -1,0 +1,84 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 9px;
+  border-radius: 6px;
+  font-family: var(--ob-mono);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  flex: none;
+}
+
+.crit-fill {
+  background: var(--ob-crit);
+  color: var(--ob-surface);
+  border: 1px solid var(--ob-crit);
+}
+.crit {
+  background: var(--ob-crit-tint);
+  color: var(--ob-crit-ink);
+}
+.crit-outline {
+  background: var(--ob-crit-tint);
+  color: var(--ob-crit-ink);
+  border: 1px solid var(--ob-crit);
+}
+.risk {
+  background: var(--ob-risk-tint);
+  color: var(--ob-risk-ink);
+}
+.risk-outline {
+  background: var(--ob-risk-tint);
+  color: var(--ob-risk-ink);
+  border: 1px solid var(--ob-risk);
+}
+.ok {
+  background: var(--ob-ok-tint);
+  color: var(--ob-ok-ink);
+}
+.info {
+  background: var(--ob-info-tint);
+  color: var(--ob-info-ink);
+}
+.neutral {
+  background: var(--ob-well);
+  color: var(--ob-text-2);
+}
+.neutral-outline {
+  background: var(--ob-well);
+  color: var(--ob-text-2);
+  border: 1px solid var(--ob-line-2);
+}
+
+.dot-crit {
+  background: var(--ob-crit);
+}
+.dot-risk {
+  background: var(--ob-risk);
+}
+.dot-ok {
+  background: var(--ob-ok);
+}
+.dot-info {
+  background: var(--ob-info);
+}
+.dot-neutral {
+  background: var(--ob-text-3);
+}

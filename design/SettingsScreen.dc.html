@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-4b89cee6-cb9a-4401-bf8d-62d51fbeaab0/styles.css">
+<script src="_ds/organic-4b89cee6-cb9a-4401-bf8d-62d51fbeaab0/_ds_bundle.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap">
+<style>
+[data-ob-theme="light"]{
+  --ob-bg:#f3eee6; --ob-surface:#fdfaf5; --ob-well:#eae3d8; --ob-line:#ded5c6; --ob-line-2:#c7bcaa;
+  --ob-text:#241f19; --ob-text-2:#6b6153; --ob-text-3:#948a7c;
+  --ob-accent:#c67139; --ob-accent-hi:#a95a28; --ob-accent-tint:#f8e7d8;
+  --ob-crit:#b23a2e; --ob-crit-tint:#f8e0dc; --ob-crit-ink:#8a2a20;
+  --ob-risk:#9c6c0b; --ob-risk-tint:#f8ecce; --ob-risk-ink:#7a5407;
+  --ob-ok:#4f7a3c;  --ob-ok-tint:#e6eed8;  --ob-ok-ink:#3c5e2d;
+  --ob-info:#2f6390; --ob-info-tint:#dfe9f2; --ob-info-ink:#254e73;
+  --ob-shadow:0 1px 2px rgba(46,43,37,.10),0 8px 24px rgba(46,43,37,.06);
+}
+[data-ob-theme="dark"]{
+  --ob-bg:#17150f; --ob-surface:#201d16; --ob-well:#2a261e; --ob-line:#38332a; --ob-line-2:#4e473c;
+  --ob-text:#f3ece0; --ob-text-2:#a89d8b; --ob-text-3:#7c7263;
+  --ob-accent:#dd8b4f; --ob-accent-hi:#efa870; --ob-accent-tint:#37281c;
+  --ob-crit:#ec8377; --ob-crit-tint:#3a201c; --ob-crit-ink:#f6b8af;
+  --ob-risk:#dfad48; --ob-risk-tint:#352a15; --ob-risk-ink:#f0cf8b;
+  --ob-ok:#93bd72;  --ob-ok-tint:#25301b;  --ob-ok-ink:#c0d9a8;
+  --ob-info:#7cafd8; --ob-info-tint:#1b2833; --ob-info-ink:#b3d1e8;
+  --ob-shadow:0 1px 0 rgba(255,255,255,.04),0 10px 28px rgba(0,0,0,.45);
+}
+:root{ --ob-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace; --ob-r-sm:8px; --ob-r:12px; --ob-r-lg:18px;
+  --ob-ui:"Figtree","Noto Sans JP",system-ui,sans-serif; }
+html,body{margin:0;background:#f3eee6}
+*{box-sizing:border-box}
+</style>
+</helmet>
+
+<div data-ob-theme="{{ theme }}" style="display:grid;grid-template-columns:216px 1fr;min-height:max(760px,100vh);background:var(--ob-bg);color:var(--ob-text);font-family:var(--ob-ui);font-size:14px;line-height:1.55">
+
+  <div style="border-right:1px solid var(--ob-line);background:var(--ob-surface);display:flex;flex-direction:column;padding:16px 12px">
+    <div style="display:flex;align-items:center;gap:10px;padding:4px 8px 20px">
+      <div style="width:26px;height:26px;border-radius:9px;background:var(--ob-accent);display:grid;place-items:center;color:var(--ob-surface);font-size:14px;font-weight:600;line-height:1">O</div>
+      <span style="font-size:16px;font-weight:600;letter-spacing:-.015em">OpsBridge</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:2px">
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;color:var(--ob-text-2);font-size:13px">{{ t.dashboard }}</div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;color:var(--ob-text-2);font-size:13px">{{ t.incidents }}<span style="margin-left:auto;font-family:var(--ob-mono);font-size:11px;color:var(--ob-crit-ink);background:var(--ob-crit-tint);padding:1px 7px;border-radius:999px">14</span></div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;color:var(--ob-text-2);font-size:13px">{{ t.services }}</div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;color:var(--ob-text-2);font-size:13px">{{ t.oncall }}</div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;color:var(--ob-text-2);font-size:13px">{{ t.postmortems }}</div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;background:var(--ob-accent-tint);color:var(--ob-accent-hi);font-weight:600;font-size:13px"><span style="width:6px;height:6px;border-radius:999px;background:var(--ob-accent)"></span>{{ t.settings }}</div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;min-width:0">
+    <div style="display:flex;align-items:center;gap:14px;padding:14px 28px;border-bottom:1px solid var(--ob-line);background:var(--ob-surface)">
+      <div>
+        <div style="font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.2">{{ t.settings }}</div>
+        <div style="font-size:12px;color:var(--ob-text-3)">{{ t.autosave }}</div>
+      </div>
+    </div>
+
+    <div style="padding:28px;max-width:720px;display:flex;flex-direction:column;gap:14px">
+
+      <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r-lg);background:var(--ob-surface);box-shadow:var(--ob-shadow);padding:20px 22px">
+        <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:16px">{{ t.profile }}</div>
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+          <div style="width:52px;height:52px;border-radius:999px;background:var(--ob-info-tint);color:var(--ob-info-ink);display:grid;place-items:center;font-size:16px;font-weight:600">RV</div>
+          <div style="min-width:0">
+            <div style="font-size:17px;font-weight:600;letter-spacing:-.01em">{{ t.name }}</div>
+            <div style="font-size:13px;color:var(--ob-text-2);font-family:var(--ob-mono)">r.villanueva@company.com</div>
+          </div>
+          <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+            <span style="display:inline-flex;align-items:center;padding:4px 12px;border-radius:999px;background:var(--ob-ok-tint);color:var(--ob-ok-ink);font-size:12px;font-weight:600">{{ t.roleOperator }}</span>
+            <span style="display:inline-flex;align-items:center;gap:7px;padding:4px 12px;border-radius:999px;background:var(--ob-crit-tint);color:var(--ob-crit-ink);font-size:12px;font-weight:600"><span style="width:7px;height:7px;border-radius:999px;background:var(--ob-crit)"></span>{{ t.onCallNow }}</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:18px">
+          <div style="background:var(--ob-well);border-radius:var(--ob-r);padding:11px 13px"><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:2px">{{ t.team }}</div><div style="font-size:13px">Team Gatekeeper</div></div>
+          <div style="background:var(--ob-well);border-radius:var(--ob-r);padding:11px 13px"><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:2px">{{ t.shift }}</div><div style="font-family:var(--ob-mono);font-size:13px">08:00 – 18:00 UTC</div></div>
+          <div style="background:var(--ob-well);border-radius:var(--ob-r);padding:11px 13px"><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:2px">{{ t.permissions }}</div><div style="font-size:13px">{{ t.permsValue }}</div></div>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r-lg);background:var(--ob-surface);box-shadow:var(--ob-shadow);padding:20px 22px;display:flex;flex-direction:column;gap:18px">
+        <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3)">{{ t.preferences }}</div>
+
+        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+          <div style="min-width:0;flex:1">
+            <div style="font-size:14px;font-weight:600">{{ t.language }}</div>
+            <div style="font-size:13px;color:var(--ob-text-2);text-wrap:pretty">{{ t.languageNote }}</div>
+          </div>
+          <div style="display:flex;border:1px solid var(--ob-line-2);border-radius:999px;overflow:hidden;flex:none">
+            <button onClick="{{ setEn }}" style="{{ enBtn }}">English</button>
+            <button onClick="{{ setJa }}" style="{{ jaBtn }}">日本語</button>
+          </div>
+        </div>
+
+        <div style="height:1px;background:var(--ob-line)"></div>
+
+        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+          <div style="min-width:0;flex:1">
+            <div style="font-size:14px;font-weight:600">{{ t.theme }}</div>
+            <div style="font-size:13px;color:var(--ob-text-2);text-wrap:pretty">{{ t.themeNote }}</div>
+          </div>
+          <div style="display:flex;border:1px solid var(--ob-line-2);border-radius:999px;overflow:hidden;flex:none">
+            <button onClick="{{ setLight }}" style="{{ lightBtn }}">{{ t.light }}</button>
+            <button onClick="{{ setDark }}" style="{{ darkBtn }}">{{ t.dark }}</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:9px;font-size:12px;color:var(--ob-text-3);padding:0 4px">
+        <span style="width:7px;height:7px;border-radius:999px;background:var(--ob-ok);flex:none"></span>
+        {{ t.footnote }}
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light' | 'dark'&quot;},&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;ja&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;'en' | 'ja'&quot;}}">
+class Component extends DCLogic {
+  state = { lang: null, theme: null };
+
+  static STRINGS = {
+    en: {
+      dashboard: 'Dashboard', incidents: 'Incidents', services: 'Services', oncall: 'On-call',
+      postmortems: 'Postmortems', settings: 'Settings',
+      autosave: 'Changes apply immediately',
+      profile: 'Profile', name: 'R. Villanueva', roleOperator: 'Operator',
+      onCallNow: 'On call now', team: 'Team', shift: 'Shift', permissions: 'Permissions',
+      permsValue: 'Declare · assign · resolve',
+      preferences: 'Preferences',
+      language: 'Language', languageNote: 'Interface language. Timestamps stay UTC for every locale.',
+      theme: 'Theme', themeNote: 'Dark is the default on wall displays and night shifts.',
+      light: 'Light', dark: 'Dark',
+      footnote: 'Signed in via SSO · session expires 18:40 UTC'
+    },
+    ja: {
+      dashboard: 'ダッシュボード', incidents: 'インシデント', services: 'サービス', oncall: 'オンコール',
+      postmortems: 'ポストモーテム', settings: '設定',
+      autosave: '変更は即時に適用されます',
+      profile: 'プロフィール', name: 'R. ビヤヌエバ', roleOperator: 'オペレーター',
+      onCallNow: 'オンコール中', team: 'チーム', shift: 'シフト', permissions: '権限',
+      permsValue: '起票・割当・解決',
+      preferences: '環境設定',
+      language: '言語', languageNote: '表示言語を切り替えます。時刻表示はどの言語でも UTC のままです。',
+      theme: 'テーマ', themeNote: '夜勤や大型ディスプレイではダークが既定です。',
+      light: 'ライト', dark: 'ダーク',
+      footnote: 'SSO でサインイン中 · セッションは 18:40 UTC に失効'
+    }
+  };
+
+  renderVals() {
+    const lang = this.state.lang || this.props.lang || 'en';
+    const theme = this.state.theme || this.props.theme || 'light';
+    const pill = active => 'height:32px;padding:0 16px;border:0;cursor:pointer;font-family:var(--ob-ui);font-size:13px;font-weight:600;'
+      + (active ? 'background:var(--ob-accent);color:var(--ob-surface)' : 'background:transparent;color:var(--ob-text-2)');
+    return {
+      theme: theme,
+      t: Component.STRINGS[lang],
+      setEn: () => this.setState({ lang: 'en' }),
+      setJa: () => this.setState({ lang: 'ja' }),
+      enBtn: pill(lang === 'en'),
+      jaBtn: pill(lang === 'ja'),
+      setLight: () => this.setState({ theme: 'light' }),
+      setDark: () => this.setState({ theme: 'dark' }),
+      lightBtn: pill(theme === 'light'),
+      darkBtn: pill(theme === 'dark')
+    };
+  }
+}
+</script>
+</body>
+</html>

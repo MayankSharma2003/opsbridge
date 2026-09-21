@@ -1,0 +1,232 @@
+.refreshRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.refreshButton {
+  height: 26px;
+  padding: 0 11px;
+  border: 1px solid var(--ob-line-2);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ob-text-2);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.kpiRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.kpiCard {
+  border: 1px solid var(--ob-line);
+  border-radius: var(--ob-r-lg);
+  background: var(--ob-surface);
+  box-shadow: var(--ob-shadow);
+  padding: 16px 18px;
+}
+.kpiLabel {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ob-text-3);
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.kpiValue {
+  font-family: var(--ob-mono);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.kpiEmpty {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ob-text-3);
+}
+.kpiBreakdown {
+  display: flex;
+  gap: 2px;
+  height: 6px;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.kpiBreakdownSegment {
+  height: 100%;
+}
+
+.chartRow {
+  display: grid;
+  /* Not an even split: the prototype gives the MTTR chart the wider half (464 / 696 at 1440). */
+  grid-template-columns: minmax(0, 464fr) minmax(0, 696fr);
+  gap: 16px;
+}
+.card {
+  border: 1px solid var(--ob-line);
+  border-radius: var(--ob-r-lg);
+  background: var(--ob-surface);
+  box-shadow: var(--ob-shadow);
+  padding: 16px 18px;
+}
+.cardTitle {
+  font-size: 15px;
+  font-weight: 600;
+}
+.cardSubtitle {
+  font-size: 11px;
+  color: var(--ob-text-3);
+  margin-bottom: 12px;
+}
+
+.priorityList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+.priorityRow {
+  display: grid;
+  /* The count column carries "open · N · NN%" now, which does not fit the old 64px. */
+  grid-template-columns: 76px 1fr 104px;
+  align-items: center;
+  gap: 10px;
+}
+.priorityLabel {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--ob-mono);
+  font-size: 12px;
+  font-weight: 600;
+}
+.priorityDescriptor {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--ob-text-3);
+  text-transform: capitalize;
+}
+.priorityBarTrack {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--ob-well);
+  overflow: hidden;
+}
+.priorityBarFill {
+  height: 100%;
+  border-radius: 999px;
+}
+.bar-P1 {
+  background: var(--ob-crit);
+}
+.bar-P2 {
+  background: var(--ob-risk);
+}
+.bar-P3 {
+  background: var(--ob-info);
+}
+.bar-P4 {
+  background: var(--ob-text-3);
+}
+.priorityCount {
+  font-size: 12px;
+  color: var(--ob-text-2);
+  text-align: right;
+}
+
+.trendSvg {
+  width: 100%;
+  height: 110px;
+  overflow: visible;
+}
+.trendLine {
+  fill: none;
+  stroke: var(--ob-accent);
+  stroke-width: 2;
+}
+.trendDot {
+  fill: var(--ob-accent);
+}
+.trendLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 10px;
+  color: var(--ob-text-3);
+}
+.trendEmpty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 110px;
+  font-size: 13px;
+  color: var(--ob-text-3);
+}
+
+.kpiSubLine {
+  font-size: 12px;
+  color: var(--ob-text-2);
+  margin-top: 4px;
+}
+
+.recentCard {
+  margin-top: 16px;
+}
+.recentHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.viewAll {
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  color: var(--ob-accent-hi);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.recentTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.recentTable th {
+  text-align: left;
+  padding: 8px 10px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ob-text-3);
+  font-weight: 600;
+}
+.recentTable td {
+  padding: 9px 10px;
+  border-top: 1px solid var(--ob-line);
+}
+.recentRow {
+  cursor: pointer;
+}
+.recentRow:hover {
+  background: var(--ob-well);
+}
+.recentMono {
+  font-family: var(--ob-mono);
+  font-size: 12px;
+  color: var(--ob-text-2);
+  white-space: nowrap;
+}
+.recentTitle {
+  font-weight: 600;
+}
+.recentEmpty {
+  font-size: 13px;
+  color: var(--ob-text-3);
+  padding: 8px 0;
+}

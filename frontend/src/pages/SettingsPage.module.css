@@ -1,0 +1,99 @@
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 664px;
+}
+.card {
+  border: 1px solid var(--ob-line);
+  border-radius: var(--ob-r-lg);
+  background: var(--ob-surface);
+  box-shadow: var(--ob-shadow);
+  padding: 18px 20px;
+}
+.cardTitle {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.profileRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-family: var(--ob-mono);
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--ob-accent-tint);
+  color: var(--ob-accent-hi);
+  flex: none;
+}
+.profileName {
+  font-size: 14px;
+  font-weight: 600;
+}
+.profileEmail {
+  font-size: 12px;
+  color: var(--ob-text-2);
+}
+.roleBadge {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--ob-well);
+  color: var(--ob-text-2);
+}
+
+.prefRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+}
+.prefRow + .prefRow {
+  border-top: 1px solid var(--ob-line);
+}
+.prefLabel {
+  font-size: 14px;
+  font-weight: 600;
+}
+.prefNote {
+  font-size: 12px;
+  color: var(--ob-text-3);
+  max-width: 40ch;
+}
+
+.pillGroup {
+  display: flex;
+  border: 1px solid var(--ob-line-2);
+  border-radius: 999px;
+  overflow: hidden;
+  flex: none;
+}
+.pill {
+  height: 30px;
+  padding: 0 14px;
+  border: 0;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  background: transparent;
+  color: var(--ob-text-2);
+}
+.pillActive {
+  background: var(--ob-accent);
+  color: var(--ob-surface);
+}

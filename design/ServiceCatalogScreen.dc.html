@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-4b89cee6-cb9a-4401-bf8d-62d51fbeaab0/styles.css">
+<script src="_ds/organic-4b89cee6-cb9a-4401-bf8d-62d51fbeaab0/_ds_bundle.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+[data-ob-theme="light"]{
+  --ob-bg:#f3eee6; --ob-surface:#fdfaf5; --ob-well:#eae3d8; --ob-line:#ded5c6; --ob-line-2:#c7bcaa;
+  --ob-text:#241f19; --ob-text-2:#6b6153; --ob-text-3:#948a7c;
+  --ob-accent:#c67139; --ob-accent-hi:#a95a28; --ob-accent-tint:#f8e7d8;
+  --ob-crit:#b23a2e; --ob-crit-tint:#f8e0dc; --ob-crit-ink:#8a2a20;
+  --ob-risk:#9c6c0b; --ob-risk-tint:#f8ecce; --ob-risk-ink:#7a5407;
+  --ob-ok:#4f7a3c;  --ob-ok-tint:#e6eed8;  --ob-ok-ink:#3c5e2d;
+  --ob-info:#2f6390; --ob-info-tint:#dfe9f2; --ob-info-ink:#254e73;
+  --ob-shadow:0 1px 2px rgba(46,43,37,.10),0 8px 24px rgba(46,43,37,.06);
+  --ob-shadow-lg:0 18px 48px rgba(30,26,20,.20);
+  --ob-scrim:rgba(24,20,14,.40);
+}
+[data-ob-theme="dark"]{
+  --ob-bg:#17150f; --ob-surface:#201d16; --ob-well:#2a261e; --ob-line:#38332a; --ob-line-2:#4e473c;
+  --ob-text:#f3ece0; --ob-text-2:#a89d8b; --ob-text-3:#7c7263;
+  --ob-accent:#dd8b4f; --ob-accent-hi:#efa870; --ob-accent-tint:#37281c;
+  --ob-crit:#ec8377; --ob-crit-tint:#3a201c; --ob-crit-ink:#f6b8af;
+  --ob-risk:#dfad48; --ob-risk-tint:#352a15; --ob-risk-ink:#f0cf8b;
+  --ob-ok:#93bd72;  --ob-ok-tint:#25301b;  --ob-ok-ink:#c0d9a8;
+  --ob-info:#7cafd8; --ob-info-tint:#1b2833; --ob-info-ink:#b3d1e8;
+  --ob-shadow:0 1px 0 rgba(255,255,255,.04),0 10px 28px rgba(0,0,0,.45);
+  --ob-shadow-lg:0 24px 60px rgba(0,0,0,.65);
+  --ob-scrim:rgba(0,0,0,.55);
+}
+:root{ --ob-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace; --ob-r-sm:8px; --ob-r:12px; --ob-r-lg:18px; }
+html,body{margin:0;background:#f3eee6}
+*{box-sizing:border-box}
+@keyframes ob-slide{from{transform:translateX(24px);opacity:0}to{transform:none;opacity:1}}
+</style>
+</helmet>
+
+<div data-ob-theme="{{ theme }}" style="position:relative;display:grid;grid-template-columns:216px 1fr;min-height:max(880px,100vh);background:var(--ob-bg);color:var(--ob-text);font-family:var(--font-body);font-size:14px;line-height:1.5;overflow:hidden">
+
+  <div style="border-right:1px solid var(--ob-line);background:var(--ob-surface);display:flex;flex-direction:column;padding:16px 12px">
+    <div style="display:flex;align-items:center;gap:10px;padding:4px 8px 20px">
+      <div style="width:26px;height:26px;border-radius:9px;background:var(--ob-accent);display:grid;place-items:center;color:var(--ob-surface);font-size:14px;font-weight:600;line-height:1">O</div>
+      <span style="font-size:16px;font-weight:600;letter-spacing:-.015em">OpsBridge</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:2px">
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;color:var(--ob-text-2);font-size:13px">Dashboard</div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;color:var(--ob-text-2);font-size:13px">Incidents<span style="margin-left:auto;font-family:var(--ob-mono);font-size:11px;color:var(--ob-crit-ink);background:var(--ob-crit-tint);padding:1px 7px;border-radius:999px">14</span></div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;background:var(--ob-accent-tint);color:var(--ob-accent-hi);font-weight:600;font-size:13px"><span style="width:6px;height:6px;border-radius:999px;background:var(--ob-accent)"></span>Services<span style="margin-left:auto;font-family:var(--ob-mono);font-size:11px">10</span></div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;color:var(--ob-text-2);font-size:13px">On-call</div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;color:var(--ob-text-2);font-size:13px">Postmortems</div>
+      <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;color:var(--ob-text-2);font-size:13px">Settings</div>
+    </div>
+    <div style="margin-top:auto;border-top:1px solid var(--ob-line);padding-top:14px">
+      <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:8px">Catalog health</div>
+      <div style="display:flex;flex-direction:column;gap:7px;font-size:12px;color:var(--ob-text-2)">
+        <div style="display:flex;align-items:center;gap:8px"><span style="width:7px;height:7px;border-radius:999px;background:var(--ob-crit)"></span>2 degraded</div>
+        <div style="display:flex;align-items:center;gap:8px"><span style="width:7px;height:7px;border-radius:999px;background:var(--ob-risk)"></span>3 watching</div>
+        <div style="display:flex;align-items:center;gap:8px"><span style="width:7px;height:7px;border-radius:999px;background:var(--ob-ok)"></span>5 nominal</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;min-width:0">
+    <div style="display:flex;align-items:center;gap:14px;padding:14px 24px;border-bottom:1px solid var(--ob-line);background:var(--ob-surface)">
+      <div>
+        <div style="font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.2">Service catalog</div>
+        <div style="font-size:12px;color:var(--ob-text-3);font-family:var(--ob-mono)">{{ countLine }}</div>
+      </div>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+        <input value="{{ query }}" onChange="{{ onQuery }}" placeholder="Search service or team…" style="width:252px;height:34px;padding:0 13px;border:1px solid var(--ob-line-2);border-radius:var(--ob-r-sm);background:var(--ob-bg);color:var(--ob-text);font-family:var(--font-body);font-size:13px">
+        <div style="display:flex;border:1px solid var(--ob-line);border-radius:999px;overflow:hidden;font-size:12px;font-weight:600">
+          <button onClick="{{ tierAll }}" style="{{ tAll }}">All tiers</button>
+          <button onClick="{{ tier1 }}" style="{{ t1 }}">Tier 1</button>
+          <button onClick="{{ tier2 }}" style="{{ t2 }}">Tier 2</button>
+          <button onClick="{{ tier3 }}" style="{{ t3 }}">Tier 3</button>
+        </div>
+        <sc-if value="{{ isAdmin }}" hint-placeholder-val="{{ false }}">
+          <button style="height:34px;padding:0 15px;border:1px solid var(--ob-accent);border-radius:var(--ob-r-sm);background:var(--ob-accent);color:var(--ob-surface);font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer">+ Add service</button>
+        </sc-if>
+        <div style="display:flex;align-items:center;gap:8px;padding-left:8px;border-left:1px solid var(--ob-line)">
+          <div style="width:24px;height:24px;border-radius:999px;background:var(--ob-info-tint);color:var(--ob-info-ink);display:grid;place-items:center;font-size:10px;font-weight:600">{{ meInitials }}</div>
+          <span style="{{ roleBadge }}">{{ roleLabel }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:18px 24px">
+      <div style="border:1px solid var(--ob-line);border-radius:var(--ob-r-lg);background:var(--ob-surface);box-shadow:var(--ob-shadow);overflow:hidden">
+        <table style="width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums">
+          <thead>
+            <tr style="background:var(--ob-well)">
+              <th style="text-align:left;padding:9px 18px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600">Service</th>
+              <th style="text-align:left;padding:9px 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600">Owning team</th>
+              <th style="text-align:left;padding:9px 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600">Tier</th>
+              <th style="text-align:left;padding:9px 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600">Health</th>
+              <th style="text-align:right;padding:9px 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600">Active</th>
+              <th style="text-align:right;padding:9px 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600">Uptime 30d</th>
+              <th style="text-align:right;padding:9px 18px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ob-text-3);font-weight:600"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{ rows }}" as="row" hint-placeholder-count="10">
+              <tr onClick="{{ row.open }}" style="{{ row.rowStyle }}" style-hover="background:var(--ob-well)">
+                <td style="padding:11px 18px">
+                  <div style="display:flex;align-items:center;gap:10px">
+                    <span style="{{ row.iconStyle }}">{{ row.abbr }}</span>
+                    <span>
+                      <span style="display:block;font-family:var(--ob-mono);font-size:13px;font-weight:600">{{ row.name }}</span>
+                      <span style="display:block;font-size:12px;color:var(--ob-text-3)">{{ row.kind }}</span>
+                    </span>
+                  </div>
+                </td>
+                <td style="padding:11px 12px;color:var(--ob-text-2)">{{ row.team }}</td>
+                <td style="padding:11px 12px"><span style="{{ row.tierStyle }}">{{ row.tier }}</span></td>
+                <td style="padding:11px 12px"><span style="{{ row.healthStyle }}"><span style="{{ row.dotStyle }}"></span>{{ row.health }}</span></td>
+                <td style="padding:11px 12px;text-align:right"><span style="{{ row.activeStyle }}">{{ row.active }}</span></td>
+                <td style="padding:11px 12px;text-align:right;font-family:var(--ob-mono);font-size:12px;color:var(--ob-text-2)">{{ row.uptime }}</td>
+                <td style="padding:11px 18px;text-align:right;color:var(--ob-text-3)">›</td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-top:12px;font-size:12px;color:var(--ob-text-3)">
+        <span>Click any row to open the service drawer.</span>
+        <sc-if value="{{ isAdmin }}" hint-placeholder-val="{{ false }}">
+          <span>Admins can also edit tier, SLA target and escalation from the drawer.</span>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+
+  <sc-if value="{{ drawerOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;inset:0;z-index:40">
+      <div onClick="{{ close }}" style="position:absolute;inset:0;background:var(--ob-scrim)"></div>
+      <div style="position:absolute;top:0;right:0;bottom:0;width:min(492px,100%);background:var(--ob-surface);border-left:1px solid var(--ob-line);box-shadow:var(--ob-shadow-lg);display:flex;flex-direction:column;animation:ob-slide .2s ease-out">
+
+        <div style="padding:18px 22px;border-bottom:1px solid var(--ob-line)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+            <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3)">Service</span>
+            <button onClick="{{ close }}" aria-label="Close drawer" style="margin-left:auto;display:grid;place-items:center;width:28px;height:28px;border:1px solid var(--ob-line);border-radius:var(--ob-r-sm);background:transparent;color:var(--ob-text-2);cursor:pointer;font-size:13px">✕</button>
+          </div>
+          <div style="display:flex;align-items:center;gap:13px">
+            <span style="{{ sel.iconLarge }}">{{ sel.abbr }}</span>
+            <div style="min-width:0">
+              <div style="font-family:var(--ob-mono);font-size:19px;font-weight:600;letter-spacing:-.01em">{{ sel.name }}</div>
+              <div style="font-size:13px;color:var(--ob-text-2)">{{ sel.team }} · {{ sel.kind }}</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+            <span style="{{ sel.tierStyle }}">{{ sel.tier }}</span>
+            <span style="{{ sel.healthStyle }}"><span style="{{ sel.dotStyle }}"></span>{{ sel.health }}</span>
+            <span style="display:inline-flex;align-items:center;padding:3px 10px;border-radius:999px;background:var(--ob-well);color:var(--ob-text-2);font-size:12px;font-weight:600">{{ sel.active }} active incidents</span>
+          </div>
+        </div>
+
+        <div style="padding:18px 22px;overflow:auto;display:flex;flex-direction:column;gap:20px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <div style="background:var(--ob-well);border-radius:var(--ob-r);padding:11px 13px"><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:3px">Uptime 30d</div><div style="font-family:var(--ob-mono);font-size:14px">{{ sel.uptime }}</div></div>
+            <div style="background:var(--ob-well);border-radius:var(--ob-r);padding:11px 13px"><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:3px">MTTR 30d</div><div style="font-family:var(--ob-mono);font-size:14px">{{ sel.mttr }}</div></div>
+            <div style="background:var(--ob-well);border-radius:var(--ob-r);padding:11px 13px"><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:3px">SLA target</div><div style="font-family:var(--ob-mono);font-size:14px">{{ sel.sla }}</div></div>
+            <div style="background:var(--ob-well);border-radius:var(--ob-r);padding:11px 13px"><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:3px">On-call now</div><div style="font-size:14px">{{ sel.oncall }}</div></div>
+          </div>
+
+          <div>
+            <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:8px">Description</div>
+            <div style="font-size:13px;color:var(--ob-text-2);text-wrap:pretty">{{ sel.desc }}</div>
+          </div>
+
+          <div>
+            <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3);margin-bottom:10px">Dependencies</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <sc-for list="{{ sel.deps }}" as="d" hint-placeholder-count="3">
+                <span style="{{ d.style }}"><span style="{{ d.dot }}"></span>{{ d.name }}</span>
+              </sc-for>
+            </div>
+          </div>
+
+          <div>
+            <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:10px">
+              <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ob-text-3)">Recent incidents</span>
+              <span style="margin-left:auto;font-size:12px;font-weight:600;color:var(--ob-accent-hi)">View all</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <sc-for list="{{ sel.incidents }}" as="i" hint-placeholder-count="4">
+                <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--ob-line);border-radius:var(--ob-r);background:var(--ob-bg)">
+                  <span style="font-family:var(--ob-mono);font-size:12px;color:var(--ob-text-3);flex:none">{{ i.id }}</span>
+                  <span style="font-size:13px;font-weight:600;min-width:0;flex:1">{{ i.title }}</span>
+                  <span style="{{ i.priStyle }}">{{ i.pri }}</span>
+                  <span style="{{ i.statusStyle }}">{{ i.status }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:auto;display:flex;gap:8px;padding:14px 22px;border-top:1px solid var(--ob-line)">
+          <button style="height:34px;padding:0 15px;border:1px solid var(--ob-accent);border-radius:var(--ob-r-sm);background:var(--ob-accent);color:var(--ob-surface);font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer">Open runbook</button>
+          <button style="height:34px;padding:0 15px;border:1px solid var(--ob-line-2);border-radius:var(--ob-r-sm);background:var(--ob-surface);color:var(--ob-text);font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer">Page owner</button>
+          <sc-if value="{{ isAdmin }}" hint-placeholder-val="{{ false }}">
+            <button style="height:34px;padding:0 15px;border:1px dashed var(--ob-line-2);border-radius:var(--ob-r-sm);background:transparent;color:var(--ob-text-2);font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer">Edit service</button>
+          </sc-if>
+          <button onClick="{{ close }}" style="margin-left:auto;height:34px;padding:0 12px;border:1px solid transparent;border-radius:var(--ob-r-sm);background:transparent;color:var(--ob-text-2);font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer">Close</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light' | 'dark'&quot;},&quot;role&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;admin&quot;,&quot;operator&quot;],&quot;default&quot;:&quot;admin&quot;,&quot;tsType&quot;:&quot;'admin' | 'operator'&quot;},&quot;initialService&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { q: '', tier: 'all', sel: null, touched: false };
+
+  static SERVICES = [
+    ['payments-api', 'API · Go', 'Team Ledger', 'Tier 1', 'crit', 'Degraded', 3, '99.61%', '38m', '30m to mitigate', 'M. Okafor',
+      'Card authorisation, capture and refund orchestration for all storefronts. Every checkout path terminates here.',
+      [['identity-svc', 'crit'], ['events-bus', 'risk'], ['ledger-db', 'ok']],
+      [['INC-2041', 'Checkout latency above 2s', 'P1', 'crit', 'SLA breached'], ['INC-2038', 'Card tokenisation errors 3%', 'P1', 'info', 'Investigating'], ['INC-2015', 'Refund job retried 40×', 'P2', 'ok', 'Resolved'], ['INC-2003', 'Latency regression after deploy', 'P1', 'ok', 'Resolved']]],
+    ['identity-svc', 'API · Kotlin', 'Team Gatekeeper', 'Tier 1', 'crit', 'Degraded', 3, '99.72%', '41m', '60m to mitigate', 'R. Villanueva',
+      'Issues and refreshes session tokens, owns SSO federation and the device-trust checks used across every internal tool.',
+      [['session-store', 'risk'], ['sso-broker', 'ok'], ['edge-gw', 'risk']],
+      [['INC-2039', 'Auth token refresh failures', 'P1', 'risk', 'Mitigated'], ['INC-2034', 'Session cookies dropped on renew', 'P2', 'risk', 'Mitigated'], ['INC-2012', 'SSO metadata drift', 'P3', 'ok', 'Resolved'], ['INC-1996', 'Login page slow in APAC', 'P3', 'ok', 'Resolved']]],
+    ['edge-gw', 'Gateway · Envoy', 'Team Platform', 'Tier 1', 'risk', 'Watching', 2, '99.94%', '22m', '30m to mitigate', 'A. Bhatt',
+      'North-south traffic termination, TLS, rate limiting and the CDN purge pipeline for all public surfaces.',
+      [['cdn', 'ok'], ['cert-manager', 'risk']],
+      [['INC-2031', 'Elevated 5xx on edge nodes', 'P2', 'info', 'Investigating'], ['INC-2030', 'TLS renewal warning eu-west-2', 'P3', 'risk', 'Monitoring'], ['INC-2010', 'CDN purge queue stalled', 'P2', 'ok', 'Resolved']]],
+    ['events-bus', 'Streaming · Kafka', 'Team Conduit', 'Tier 1', 'risk', 'Watching', 3, '99.88%', '55m', '60m to mitigate', 'S. Aoki',
+      'Durable event backbone. Billing, notifications and analytics all consume from it; back-pressure here becomes everyone else\u2019s incident.',
+      [['schema-registry', 'ok'], ['billing-worker', 'risk']],
+      [['INC-2028', 'Webhook delivery delays', 'P3', 'risk', 'Mitigated'], ['INC-2026', 'Consumer lag on billing topic', 'P2', 'info', 'Investigating'], ['INC-2024', 'Duplicate alert routing to Slack', 'P4', 'neutral', 'Monitoring']]],
+    ['search-core', 'Service · Rust', 'Team Compass', 'Tier 2', 'risk', 'Watching', 2, '99.90%', '46m', '4h to mitigate', 'D. Lindqvist',
+      'Indexing and query serving for catalogue and help-centre search, including the nightly full rebuild.',
+      [['index-store', 'risk'], ['events-bus', 'risk']],
+      [['INC-2036', 'Search indexer backlog', 'P2', 'info', 'Investigating'], ['INC-2022', 'Facet counts stale in search', 'P3', 'risk', 'Mitigated'], ['INC-2008', 'Index rebuild exceeded window', 'P3', 'ok', 'Resolved']]],
+    ['checkout-web', 'Frontend · Next', 'Team Storefront', 'Tier 1', 'ok', 'Nominal', 0, '99.97%', '19m', '30m to mitigate', 'L. Fontaine',
+      'The customer-facing checkout funnel. Read-only dependency on payments and identity.',
+      [['payments-api', 'crit'], ['identity-svc', 'crit']],
+      [['INC-1990', 'Address form validation loop', 'P3', 'ok', 'Resolved']]],
+    ['analytics-api', 'API · Python', 'Team Insight', 'Tier 2', 'ok', 'Nominal', 0, '99.93%', '61m', '8h to mitigate', 'S. Aoki',
+      'Query layer for internal dashboards and scheduled exports. Not on the customer path.',
+      [['warehouse', 'ok'], ['events-bus', 'risk']],
+      [['INC-2019', 'Report export timeouts', 'P4', 'ok', 'Resolved'], ['INC-2017', 'Dashboard query cost spike', 'P3', 'ok', 'Resolved']]],
+    ['alert-router', 'Service · Go', 'Team Conduit', 'Tier 2', 'ok', 'Nominal', 1, '99.96%', '14m', '4h to mitigate', 'S. Aoki',
+      'Fans monitor alerts out to paging, Slack and OpsBridge itself. Deduplication rules live here.',
+      [['events-bus', 'risk'], ['pager-vendor', 'ok']],
+      [['INC-2024', 'Duplicate alert routing to Slack', 'P4', 'neutral', 'Monitoring']]],
+    ['mobile-bff', 'BFF · Node', 'Team Storefront', 'Tier 2', 'ok', 'Nominal', 0, '99.95%', '27m', '4h to mitigate', 'L. Fontaine',
+      'Aggregation layer for the iOS and Android clients; shields mobile from upstream shape changes.',
+      [['payments-api', 'crit'], ['identity-svc', 'crit']],
+      [['INC-1985', 'Cart sync conflict on reconnect', 'P3', 'ok', 'Resolved']]],
+    ['admin-console', 'Frontend · Vue', 'Team Insight', 'Tier 3', 'ok', 'Nominal', 0, '99.99%', '9m', '8h to mitigate', 'J. Meyer',
+      'Internal back-office for support agents. Degradation is annoying, never customer-visible.',
+      [['identity-svc', 'crit'], ['analytics-api', 'ok']],
+      [['INC-1979', 'Agent notes failed to save', 'P4', 'ok', 'Resolved']]]
+  ];
+
+  tierStyle(tier) {
+    const map = { 'Tier 1': 'crit', 'Tier 2': 'risk', 'Tier 3': 'neutral' };
+    const k = map[tier];
+    const fill = k === 'neutral'
+      ? 'background:var(--ob-well);color:var(--ob-text-2);border:1px solid var(--ob-line-2)'
+      : 'background:var(--ob-' + k + '-tint);color:var(--ob-' + k + '-ink);border:1px solid var(--ob-' + k + ')';
+    return 'display:inline-flex;padding:2px 9px;border-radius:6px;font-family:var(--ob-mono);font-size:12px;font-weight:600;white-space:nowrap;' + fill;
+  }
+  healthStyle(k) {
+    const fill = k === 'neutral' ? 'background:var(--ob-well);color:var(--ob-text-2)' : 'background:var(--ob-' + k + '-tint);color:var(--ob-' + k + '-ink)';
+    return 'display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap;' + fill;
+  }
+  dot(k) { return 'width:6px;height:6px;border-radius:999px;flex:none;background:var(--ob-' + (k === 'neutral' ? 'text-3' : k) + ')'; }
+  icon(k, size) {
+    const k2 = k === 'neutral' ? 'info' : k;
+    return 'width:' + size + 'px;height:' + size + 'px;border-radius:' + Math.round(size / 3) + 'px;flex:none;display:grid;place-items:center;'
+      + 'font-family:var(--ob-mono);font-size:' + (size > 34 ? 13 : 11) + 'px;font-weight:600;'
+      + 'background:var(--ob-' + k2 + '-tint);color:var(--ob-' + k2 + '-ink)';
+  }
+  seg(active) {
+    return 'height:28px;padding:0 12px;border:0;cursor:pointer;font-family:var(--font-body);font-size:12px;font-weight:600;'
+      + (active ? 'background:var(--ob-accent);color:var(--ob-surface)' : 'background:transparent;color:var(--ob-text-2)');
+  }
+  pri(p) {
+    const map = {
+      P1: 'background:var(--ob-crit);color:var(--ob-surface);border:1px solid var(--ob-crit)',
+      P2: 'background:var(--ob-crit-tint);color:var(--ob-crit-ink);border:1px solid var(--ob-crit)',
+      P3: 'background:var(--ob-risk-tint);color:var(--ob-risk-ink);border:1px solid var(--ob-risk)',
+      P4: 'background:var(--ob-well);color:var(--ob-text-2);border:1px solid var(--ob-line-2)'
+    };
+    return 'display:inline-flex;flex:none;padding:1px 8px;border-radius:6px;font-family:var(--ob-mono);font-size:11px;font-weight:600;' + map[p];
+  }
+
+  renderVals() {
+    const admin = (this.props.role || 'admin') === 'admin';
+    const s = this.state;
+    const list = Component.SERVICES.filter(d => {
+      if (s.tier !== 'all' && d[3] !== s.tier) return false;
+      if (s.q && (d[0] + ' ' + d[2] + ' ' + d[1]).toLowerCase().indexOf(s.q.toLowerCase()) < 0) return false;
+      return true;
+    });
+
+    const initial = this.props.initialService || null;
+    const selName = s.touched ? s.sel : (s.sel || initial);
+    const found = Component.SERVICES.filter(d => d[0] === selName)[0];
+
+    const sel = found ? {
+      name: found[0], kind: found[1], team: found[2], tier: found[3], health: found[5], active: found[6],
+      uptime: found[7], mttr: found[8], sla: found[9], oncall: found[10], desc: found[11],
+      abbr: found[0].slice(0, 2),
+      iconLarge: this.icon(found[4], 44),
+      tierStyle: this.tierStyle(found[3]),
+      healthStyle: this.healthStyle(found[4]),
+      dotStyle: this.dot(found[4]),
+      deps: found[12].map(d => ({
+        name: d[0],
+        style: this.healthStyle(d[1]) + ';font-family:var(--ob-mono)',
+        dot: this.dot(d[1])
+      })),
+      incidents: found[13].map(i => ({
+        id: i[0], title: i[1], pri: i[2], status: i[4],
+        priStyle: this.pri(i[2]),
+        statusStyle: this.healthStyle(i[3]) + ';flex:none'
+      }))
+    } : { deps: [], incidents: [] };
+
+    return {
+      theme: this.props.theme || 'light',
+      isAdmin: admin,
+      roleLabel: admin ? 'Admin' : 'Operator',
+      roleBadge: 'display:inline-flex;align-items:center;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600;'
+        + (admin ? 'background:var(--ob-accent-tint);color:var(--ob-accent-hi)' : 'background:var(--ob-ok-tint);color:var(--ob-ok-ink)'),
+      meInitials: admin ? 'JM' : 'RV',
+      countLine: list.length + ' of 10 services · 4 tier 1 · 2 degraded',
+      query: s.q,
+      onQuery: e => this.setState({ q: e.target.value }),
+      tierAll: () => this.setState({ tier: 'all' }),
+      tier1: () => this.setState({ tier: 'Tier 1' }),
+      tier2: () => this.setState({ tier: 'Tier 2' }),
+      tier3: () => this.setState({ tier: 'Tier 3' }),
+      tAll: this.seg(s.tier === 'all'),
+      t1: this.seg(s.tier === 'Tier 1'),
+      t2: this.seg(s.tier === 'Tier 2'),
+      t3: this.seg(s.tier === 'Tier 3'),
+      rows: list.map(d => ({
+        name: d[0], kind: d[1], team: d[2], tier: d[3], health: d[5], active: d[6], uptime: d[7],
+        abbr: d[0].slice(0, 2),
+        iconStyle: this.icon(d[4], 30),
+        tierStyle: this.tierStyle(d[3]),
+        healthStyle: this.healthStyle(d[4]),
+        dotStyle: this.dot(d[4]),
+        activeStyle: d[6] === 0
+          ? 'font-family:var(--ob-mono);font-size:12px;color:var(--ob-text-3)'
+          : 'display:inline-flex;min-width:22px;justify-content:center;padding:1px 7px;border-radius:999px;font-family:var(--ob-mono);font-size:12px;font-weight:600;background:var(--ob-' + d[4] + '-tint);color:var(--ob-' + d[4] + '-ink)',
+        rowStyle: 'border-top:1px solid var(--ob-line);cursor:pointer'
+          + (d[0] === selName ? ';background:var(--ob-well)' : ''),
+        open: () => this.setState({ sel: d[0], touched: true })
+      })),
+      drawerOpen: !!found,
+      sel: sel,
+      close: () => this.setState({ sel: null, touched: true })
+    };
+  }
+}
+</script>
+</body>
+</html>
