@@ -9,9 +9,9 @@ Three users are seeded by `V2__seed_dev_users.sql`, one per role:
 
 | Email | Password | Role | Can do |
 |---|---|---|---|
-| `viewer@opsbridge.local` | `Viewer#Dev2026` | Viewer | Read everything, change nothing |
-| `operator@opsbridge.local` | `Operator#Dev2026` | Operator | Incident workflow |
-| `admin@opsbridge.local` | `Admin#Dev2026` | Admin | Also the service catalog |
+| `viewer@opsbridge.local` | `mQOiH/3Vv9HC4NqIyxI0Wla4bao1ad3+` | Viewer | Read everything, change nothing |
+| `operator@opsbridge.local` | `ShZwrFCXXLMNqu3yXjQFLS5/WNjjCNpx` | Operator | Incident workflow |
+| `admin@opsbridge.local` | `NYZIttTlBy+Mmtaca5tTnMsRLzdaQ0nA` | Admin | Also the service catalog |
 
 > **Local development only.** These are fixture accounts on a throwaway database, and the passwords
 > are already in a committed migration — they are written here so you can actually log in, not
